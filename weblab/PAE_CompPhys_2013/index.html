@@ -1,0 +1,162 @@
+---
+layout: standard_layout
+---
+
+
+
+<!-- Add jQuery library -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+<link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+<script type="text/javascript" src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+
+<h1>Estágio PAE 2013 - Computational Physics (FFI0201) </h1>
+
+<div style="width: 305px; margin: 0 auto 0 auto;">
+<img src="weblab/PAE_CompPhys_2013/White_Matter_Connections_Obtained_with_MRI_Tractography.png" width="250px"/>
+</div>
+<table cellspacing="0" class="sites-layout-hbox">
+
+<br />
+<tbody>
+	<tr>
+		<td width=45% align="center">
+			<div>
+				<span class="mnt_subtitulo"><a href="http://thmosqueiro.vandroiy.com/index.php?section=weblab&page=PAE_compphys2013_notas">Notas de relatórios</a></span>
+				<br /><br />
+				<span class="mnt_subtitulo">Horário de atendimento</span>
+				<br />
+				<span class="mnt_horariomonitoria">A ser marcado</span>
+		</td>
+		<td>
+			<span class="mnt_subtitulo">Para contato comigo:</span>
+			<br />
+			Sala 5 do FFI (Bloco A) - Phone 3373 8777
+			<br /><br />
+			thiago <i>dot</i> mosqueiro <b>at</b> ifsc <i>dot</i> usp <i>dot</i> br
+		</td>
+	</tr>
+</tbody>
+</table>
+
+<br />
+<p>Image from Gigandet et al. (2008) PLoS ONE 3(12): e4006. <a href="http://dx.doi.org/10.1371/journal.pone.0004006" target="_blank">doi:10.1371/journal.pone.0004006</a></p>
+
+
+<h2>Materiais extras</h2>
+
+
+<ul id="conteudo">
+	<li><a href="#leituras">Leituras complementares</a></li>
+	<li><a href="#basicprograms">Exemplos de programas básicos em Fortran 77</a></li>
+	<li><a href="#sphere_montecarlo">Proj2 Ex6 - Cálculo de volume de esfera</a></li>
+	<li><a href="#seedinfortran">Definindo SEED em Fortran</a></li>
+</ul>
+
+
+<a name="leituras"></a>
+<div class="listdata">
+	<div class="titulo">Leituras complementares</div>
+	<ul>
+		<li>
+			<a href="http://pt.wikipedia.org/wiki/Fortran" target="_blank">Artigo da wikipedia sobre o Fortran.</a>
+		</li>
+		<li>
+			<a href="http://gcc.gnu.org/wiki/GFortran" target="_blank">Documentação</a> completa do gfortran.
+		</li>
+		<li>
+			<a href="http://www.cs.mtu.edu/~shene/COURSES/cs201/NOTES/format.html" target="_blank">Detalhes</a> sobre formatação de saída (veja <b>primeiro</b> o programa <i>formating.f</i> abaixo, para mais detalhes <b>depois</b> veja este link)
+		</li>
+	</ul>
+</div>
+
+
+<a name="basicprograms"></a>
+<div class="listdata">
+	<div class="titulo">Programas básicos</div>
+	<ul>
+		<li>
+			Exemplo de formatação da saída: <a href="https://github.com/thmosqueiro/IFSC-CompPhys2013/blob/master/fortran/formating.f" target="_blank">formating.f</a>
+		</li>
+		<li>
+			Exemplo de formatação da saída: <a href="https://github.com/thmosqueiro/IFSC-CompPhys2013/blob/master/fortran/dynallocate.f" target="_blank">dynallocate.f</a>
+		</li>
+		<li>
+			Exemplo de cálculo de médias: <a href="https://github.com/thmosqueiro/IFSC-CompPhys2013/blob/master/fortran/media.f" target="_blank">media.f</a>
+			<br />
+			Serve para testar os dois conceitos anteriores (alocação dinâmica e formatação de saída).
+		</li>
+		<li>
+			Programa pra gerar sin e cos: <a href="http://thmosqueiro.vandroiy.com/weblab/PAE_CompPhys_2013/Programas/sin.f" target="_blank">sin.f</a>
+			<br />
+			Serve para testar o xmgrace.
+		</li>
+	</ul>
+</div>
+
+
+<a name="sphere_montecarlo"></a>
+<div class="listdata">
+	<div class="titulo">Cálculo do volume da esfera</div>
+	
+	<p>A seguir, algumas dicas e provocações sobre o problema 6 da lista 2 -- calcular a área de uma esfera de N dimensões usando vetores aleatoriamente gerados. Clique nos gráficos para vê-los no tamanho original. A seguir vou mostrar alguns resultados gráficos que podem ajudar na visualização do problema quando a dimensão é N=2 (ou seja, estamos calculando a área de uma circunferência).</p>
+	<p>A ideia é gerar vetores cujas componentes são uniformemente geradas entre 0 e 1, o que significa que elas estão restritas a um cubo (em nosso presente caso, quadrado) de lados unitários. Veja abaixo os vetores gerados nos gráficos abaixo. Pontos azuis são vetores que cairam dentro da circunferência (linha preta tracejada), os vermelhos cairam fora.</p>
+	<a title="Representação gráfica gerando 50 vetores, azuis cairam dentro do círculo, vermelhos cairam fora." class="fancybox" rel="group" href="weblab/PAE_CompPhys_2013/images/Plotcircle_poorsampling.png"><img width="250px" src="weblab/PAE_CompPhys_2013/images/Plotcircle_poorsampling.png" alt="" /></a>
+	<a title="Representação gráfica gerando 1000 vetores, azuis cairam dentro do círculo, vermelhos cairam fora." class="fancybox" rel="group" href="weblab/PAE_CompPhys_2013/images/Plotcircle_sampling.png"><img width="250px" src="weblab/PAE_CompPhys_2013/images/Plotcircle_sampling.png" alt="" /></a>
+	<p>Se forem gerados vetores o suficiente, é possível cobrir completamente o plano (apesar de não parecer, há pontos separados no gráfico abaixo).</p>
+	<a title="Representação gráfica gerando 1 milhão de vetores, azuis cairam dentro do círculo, vermelhos cairam fora." class="fancybox" rel="group" href="weblab/PAE_CompPhys_2013/images/Plotcircle_highsampling.png"><img width="250px" src="weblab/PAE_CompPhys_2013/images/Plotcircle_highsampling.png" alt="" /></a>
+	<p>A partir daí, basta calcular a área da circunferência a partir da fração dos vetores que cairam dentro dela (você consegue formalizar este raciocínio?). Note que esta é apenas um quarto da circunferência.</p>
+	<br />
+	<p>Como os vetores são gerados a partir de números aleatórios, é de se esperar que haja uma flutuação em seus resultados. Se você rodar seu programa diversas vezes, ele dá resultados diferentes? O que seria esperado?</p>
+	<p>Além dessa flutuação, essa estimativa da área se torna tão boa quanto mais vetores forem gerados. Abaixo eu calculei o erro médio cometido nessa estimativa em função do número de vetores que são utilizados. Um desafio seria você tentar gerar uma versão sua deste gráfico.</p>
+	<a title="Erro médio cometido na estimativa da área em função do número de vetores gerados. Note que o gráfico é log-log, o que significa que observamos uma lei de potência." class="fancybox" rel="group" href="weblab/PAE_CompPhys_2013/images/Average_error.png"><img width="250px" src="weblab/PAE_CompPhys_2013/images/Average_error.png" alt="" /></a>
+	<p>Como existe essa variabilidade inerente à nossa estimativa, ao rodar o programa diversas vezes, a fração dos vetores que cai dentro da circunferência acaba saindo um pouco diferente. Podemos calcular a frequência com que observamos cada valor desta fração e construirmos um <a href="https://pt.wikipedia.org/wiki/Histograma" target="_blank">histograma</a>. Veja abaixo que conforme o número de vetores que são gerados nesse processo cresce, vemos que as frequências se localizam por volta de <i>0.78</i>. Isto é um reflexo direto da convergência do processo e resultado de um teorema central em toda a física estatística: <a href="https://pt.wikipedia.org/wiki/Teorema_central_do_limite" target="_blank">teorema central do limite</a>.</p>
+	<a title="Histograma de estimativas gerado com poucos vetores: uma gaussiana bastante espalhada." class="fancybox" rel="group" href="weblab/PAE_CompPhys_2013/images/fractions_histogram_poorsample.png"><img width="250px" src="weblab/PAE_CompPhys_2013/images/fractions_histogram_poorsample.png" alt="" /></a>
+	<a title="Histograma de estimativas gerado com muitos vetores: uma gaussiana bastante localizada." class="fancybox" rel="group" href="weblab/PAE_CompPhys_2013/images/fractions_histogram_highsample.png"><img width="250px" src="weblab/PAE_CompPhys_2013/images/fractions_histogram_highsample.png" alt="" /></a>
+	<p>Você certamente não precisa fazer todos esses testes, mas é importante compreender o que está acontecendo no seu programa (até mesmo para solucionar rapidamentes <i>bugs</i>) e estes gráficos podem ajudar bastante.</p>
+</div>
+
+
+<a name="seedinfortran"></a>
+<div class="listdata">
+	<div class="titulo">Definindo SEEED em Fortran</div>
+	
+	<p><a href="#sphere_montecarlo">No que escrevi sobre o cálculo de volume de esfera</a>, adiantei que poderia ocorrer algo estranho na geração de números aleatórios. Tente escrever um programa em Fortran que gere N=10 números aleatórios. Rode esse programa algumas vezes e você notará que todos os números são exatamente os mesmos.</p>
+	<p>Existem diversos algoritmos para <a href="https://en.wikipedia.org/wiki/Random_number_generation" target="_blank">gerar números aleatórios</a> (ou em alguns casos pseudo-aleatórois). Esses algoritmos muitas vezes são determinísticos (i.e., não existe nenhum tipo de aleatoriedade intrínseca). Eles apenas garantem que a sequência que eles geram é segue uma lei de distribuição de probabilidade, sendo na maioria das vezes uma <a href="https://en.wikipedia.org/wiki/Uniform_distribution" target="_blank">distribuição uniforme</a> da qual podemos construir outras distribuições. Por esse motivo, os gerados costumam deixar em aberto uma espécie de "inicializador", uma semente (dae o nome <a href="https://en.wikipedia.org/wiki/Random_seed" target="_blank"><i>seeds</i></a>) a partir da qual eles começam a gerar sua sequência. Isso faz com que possamos gerar diferentes sequências, todas com a mesma distribuição de probabilidade, a partir de diferentes <i>seeds</i>.</p>
+	<p>Abaixo deixo um programa exemplo de como configurar o SEED. Tente compilar esse código e o execute assim: <b>./random 1</b> (em vez de "random" use o nome do executável que você criou). Se você rodá-lo novamente usando <b>./random 1</b> ele apresentará o memso número aleatório. No entanto, se você rodar <b>./random 100</b>, ele apresentará outro número aleatório. Para não precisar ficar modificando à mão, use <b>./random $RANDOM</b>. Você verá que a cada vez que você roda o programa dessa forma, ele apresentará um número diferente.</p>
+	<ul>
+		<li>
+			Trecho de código pra configurar o seed: <a href="https://github.com/thmosqueiro/IFSC-CompPhys2013/blob/master/fortran/random.f" target="_blank">random.f</a>
+	</ul>
+	<p>Note que em vez de <b>rand()</b>, eu uso a função <b>ran1()</b>, definida no fim do arquivo <i>random.f</i></p>
+	<p>Se quiser usar isso em seu código, o que você precisa é:</p>
+	<ul>
+		<li>definir as variáveis <i>bugger</i>, <i>jseed</i> e <i>ran1</i> (veja no começo do programa);</li>
+		<li>e copiar o trecho entre a marcação <i>! -- Setting up (...)</i> e <i>! -- End setting up (...)</i>.</li>
+	</ul>
+</div>
+
+
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+
+<br /><br />
+<br />

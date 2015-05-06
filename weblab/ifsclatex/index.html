@@ -1,0 +1,161 @@
+---
+layout: standard_layout
+---
+
+
+<a name="topo"></a>
+
+<div id="pagina_estilo_latex">
+	
+	<h1>TeXifsc</h1>
+	
+	<h3>Esta página <i>pessoal</i> contem informações de minha classe de LaTeX gerada para atender a maior parte das normas requeridas pela ABNT e pela Biblioteca do IFSC. Estou montando um demonstrativo desta classe, a versão atual pode ser encontrada <a href="./diss.pdf" target="_blank">aqui</a>. O código todo está disponível abaixo.</h3>
+	
+	<p><b><span style="background-color: #FFFF00;">NOTÍCIA 03/12/2013</span> -</b> estou passando esta pasta para um servidor de versão que estará aberto a todos! Isso deve ocorrer até dia 06/12/2013. A versão será mais atual que a disponível abaixo, portanto sugiro que aguarde alguns dias.</p>
+	
+	<h3>É importante comentar que a <a href="http://sifsc.ifsc.usp.br" target="_blank">II SIFSC</a> abriu espaço para que este pacote se torna-se mais amplamente conhecido no instituto.</h3>
+		
+	<div id="indice">
+		<ul class="indice">
+			<li><a href="#doquesetrata">Do que se trata?</a></li>
+			<li><a href="#howtouse">Facilidade de uso</a></li>
+			<li><a href="#exemplos">Exemplos de uso desta classe</a></li>
+			<li><a href="#download">Download</a></li>
+			<li><a href="#bugs"><i>Bugs</i> conhecidos</a></li>
+			<li><a href="#autores">Autor e contribuidores</a></li>
+		</ul>
+	</div>
+	
+	<h3><b>Importante:</b> esta classe pode não atender a todas as regras <i>atuais</i> (por exemplo, por estar desatualizada) e não posso garantir assistência a todos. Use-a sabendo disso. No entanto, qualquer pessoa com algum conhecimento mais profundo de LaTeX poderá ser capaz de lhe ajudar a arrumar uma coisa ou outra.</h3>
+
+
+	<h2><a name="doquesetrata">Do que se trata?</a></h2>
+
+	<h3>O <a href="http://www.latex-project.org/intro.html" target="_blank">LaTeX</a> é um sistema para preparação de documentos para composição de alta-qualidade. Não se trata de um processador de texto (como o Open Office Writer ou o Microsoft Word). É exatamente o contrário: a ideia é que usuário <b>não se preocupe com a aparência do documento, mas sim com o conteúdo</b>.</h3>
+	
+	<h3>A ideia básica é a de uma linguagem de marcação: você identifica o tipo do documento (artigo, livro, tese, relatório), o título, autores, etc, tudo em campos separados. Ao chamar o LaTeX, um processador reune as informações e cruza tudo para que saia um documento seguindo as normas que regem o tipo definido e com o conteúdo descrito. Por exemplo, a <i>American Physical Society</i> (APS) disponibiliza um tipo de documento próprio para suas revistas, o <i>revtex</i>. Com ele, é muito simples gerar um artigo com o <i>look and feel</i> dos jornais da APS (para mais detalhes, veja este <a href="http://www.latex-community.org/know-how/194-a-brief-description-of-revtex-4-package" target="_blank">artigo</a>).</h3>
+	
+	<h3>Ao escrever uma tese, o ideal seria focar-se na ciência, não em formatações. Por isso muitas universidades têm modelos LaTeX que atendem a todas as exigências de suas respectivas agências de normas. No IFSC, aparentemente existem algumas tentativas de se fazer isso, e este pacote é uma delas. Fiz durante minha dissertação de mestrado e resolvi disponibilizá-la para que isso não se perca a toa. O grande propósito deste pacote é que você possa dizer "quero escrever uma tese do IFSC" e o LaTeX já consiga formatar tudo pra você. Vale comentar que baseei meus códigos no ABNTeX.</h3>
+	
+	<h3>Os desenvolvimentos são feitos em contato com o <a href="http://www.biblioteca.ifsc.usp.br/" target="_blank">Serviço de Biblioteca e Informação Prof. Bernhard Gross</a>, especificamente com Maria Cristina C. Dziabas e Ana Mara M. C. Prado. Infelizmente não tenho tempo de atualizar constantemente este pacote. Por isso, se você utilizá-lo e tiver soluções que eu não fui capaz de implementar, entre em contato!! Disponibilizarei imediatamente suas soluções para todos!</h3>
+	
+	
+	<a class="volta" href="#topo">Voltar ao topo</a>
+	
+	<h2><a name="howtouse">Facilidade de uso</a></h2>
+	
+	<h3>Vou comentar rapidamente qual a minha ideia de uma classe que realmente seja boa e o que de fato está implementado. Para ficar mais organizado, comentarei aspectos gerais primeiramente e, em seguida, falarei sobre referências (BibTeX). A ideia <b>não</b> é introduzir ao LaTeX de uma forma geral, mas tentarei fazer o texto o mais básico quanto possível.</h3>
+	
+	<h3 class="subsecao"><b>LaTeX</b></h3>
+	
+	<h3>Como comentei na seção <a href="#doquesetrata">Do que se trata?</a>, a ideia do LaTeX como uma linguagem de marcação é que você coloque em um lugar o texto indexado de uma forma inteligente, e em outro lugar defina como cada parte do texto deve ser <i>formatada</i>. O que define essas formatações de forma primordial é a classe do documento, definida na primeira linha do seu arquivo LaTeX. Como esta classe chama-se <i>ifsc</i>, a primeira linha do documento será algo próximo de</h3>
+	
+	<h3><span class="latex">\documentclass[OPÇÕES]{ifsc}</span></h3>
+	
+	<h3>Em "OPÇÕES" geralmente se usam definições específicas que podem mudar com o tempo e, portanto, preferi deixar livres. No arquivo exemplo, eu usei:</h3>
+	
+	<h3><span class="latex">\documentclass[a4paper, espaco=emeio, dvips, ruledheader, twoside, openright, final, normalfigtabnum, tocpage=plain]{ifsc}</span></h3>
+	
+	<h3>A menos que você queira mudar algo e saiba o que está fazendo, a ideia seria não mexer nessa parte.</h3>
+	
+	<h3>A primeira parte de uma tese é a capa, resumos, agradecimentos, lista de tabelas, figuras, etc. Isso também será montado pelo próprio LaTeX já seguindo os padrões exigidos pela ABNT e pela bibioteca. Dentre os arquivos de exemplo da classe, existe um arquivo chamado <i>titlepage.tex</i> em que definem-se todas informações necessárias para a montagem da seção inicial, parecido com o seguinte:</h3>
+	
+	<h3><span class="latex">\autor{Seu nome}</span></h3>
+	<h3><span class="latex">\titulo{Título da sua tese}</span></h3>
+	<h3><span class="latex">\orientador{Prof. Dr. Nome do Seu Orientador}</span></h3>
+	<h3><span class="latex">\area{Física Básica}</span></h3>
+	
+	<h3>Veja abaixo o resultado (pulando páginas em branco):</h3>
+	
+	<img src="weblab/ifsclatex/images/folharosto.png" width="400px" />
+	<img src="weblab/ifsclatex/images/capa.png" width="400px" />
+	<img src="weblab/ifsclatex/images/sumario.png" width="400px" />
+	
+	<h3>Estas páginas são colocadas já à direita automaticamente, deixando folhas em branco sempre que necessário. O resumo é bem semelhante e pode ser visto no arquivo resumo.tex, tanto a versão em português como a versão em inglês. Note que o texto aleatório usado para o resumo passa de uma página, e mesmo assim a abertura mantém-se na página impar automaticamente.</h3>
+	
+	<h3>De resto, qualquer pessoa que conhece o mínimo de LaTeX poderá entender sozinho, basicamente será escrever um documento normalmente. Sugiro partir dos arquivos exemplo e ir adicionando o conteúdo, alterando as informações da tese para as suas próprias (título, autor, etc). O próximo passo é como fazer referências da <i>forma correta</i>. Para tal, preparei também um programinha que poderá usar referências armazenadas no formato BibTeX e gerará o formato correto.</h3>
+	
+	<h3 class="subsecao"><b>Bibtex</b></h3>
+	
+	<h3>O BibTeX (<a href="http://www.bibtex.org" target="_blank">http://www.bibtex.org</a>) é um formato para indexar referências discriminando todos os campos necessários para que a citação obedeça um dado sistema de referenciamento. O que exatamente significa? Ao ler um artigo ou livro, o(s) autor(es) pode(m) fazer referências a outros trabalhos. Ao final da obra, temos acesso à lista de referências. Cada uma destas entradas tem que conter todas as informações para que qualquer pessoa possa encontrar de forma certeira a obra que foi referenciada. No caso de artigos, para a maioria das revistas só são necessários, além do nome da revista, o volume e a numeração da primeira página (veja por exemplo a <a href="http://prl.aps.org/" target="_blank">Physical Review Letters</a>, canto direito superior). Veja um exemplo de artigo em bibtex:</h3>
+
+	<h3 class="bibtex">
+		@ARTICLE{PhysRevB.76.195439,<br />
+			author = {Rusin, Tomasz M. and Zawadzki, Wlodek},<br />
+			title = {Transient Zitterbewegung of charge carriers in mono- and bilayer graphene, and carbon nanotubes},<br />
+			journal = {Physical Review B},<br />
+  			year = {2007},<br />
+			volume = {76},<br />
+			pages = {195439-1--195439-7},<br />
+			number = {19},<br />
+  			doi = {10.1103/PhysRevB.76.195439},<br />
+  			numpages = {7},<br />
+			publisher = {American Physical Society}<br />
+			}
+	</h3>
+
+	<h3>No entanto, a forma como essas informações serão descritas é de livre escolha dos editores. E o BibTeX serve exatamente para que o trabalho de por suas referências no formato correto de cada jornal ou instituição não seja seu, mas sim do computador: uma vez que as regras são definidas, constroi-se um programa que pega as entradas do BibTeX e as processa da forma como o editor desejar. No caso de teses seguindo as normas da ABNT, temos um conjunto de regras bem definidas para isso, mas não consegui encontrar um programa assim específico. Daí a ideia de desenvolvê-lo. Veja como fica a saída se citamos esta referência usando <span class="latex">\cite{PhysRevB.76.195439}</span>:</h3>
+
+	<img src="weblab/ifsclatex/images/ref1_exemplo.png" width="560px" alt="Referência de exemplo para formatação." />
+
+	<h3>A numeração é automática, a ordenação "Sobrenome, Nome" também, a separação em ";", supressão dos Nomes apenas nas iniciais, transformação para letras maiúsculas, etc, é tudo automático. Vamos supor que você precise então publicar em um jornal que <b>não</b> segue esse modelo? Você não precisará mudar o a entrada do BibTeX, bastará você usar o modelo fornecido pela revista que tudo será modificado da forma apropriada.</h3>
+	
+	<h3>Para criar essas entradas, você pode (i) montar a partir de um exemplo ou (ii) baixar a entrada diretamente do jornal (geralmente disponíveis em links "download to manager" ou "download citation"), o que é bastante prático. Diversos jornais grandes (e pequenos) oferecem como opção de exportação o BibTex, assim como gerenciadores de referências gratuitos (<a href="http://jabref.sourceforge.net/" target="_blank">JabRef</a>, Mendeley, etc) e pagos.</h3>
+	
+	
+	<a class="volta" href="#topo">Voltar ao topo</a>
+	
+	<h2><a name="exemplos">Exemplos de uso desta classe</a></h2>
+	
+	<h3>Veja algumas das teses que foram escritas usando esta classe:</h3>
+	
+	<ul class="listateses">
+		<li><a href="http://www.teses.usp.br/teses/disponiveis/76/76131/tde-20042011-154055" target="_blank">Mosqueiro, Thiago Schiavo. Transições ópticas em heteroestruturas semicondutoras Zincblende com duas sub-bandas.</a></li>
+		<li><a href="http://www.teses.usp.br/teses/disponiveis/76/76131/tde-07052012-135135" target="_blank">Moriya, Paulo Hisao. Manipulação do pulso superradiante via interações atômicas.</a></li>
+	</ul>
+	
+	
+	<a class="volta" href="#topo">Voltar ao topo</a>
+	
+	<h2><a name="download">Download</a></h2>
+	
+	<h3>Estou montando um demonstrativo desta classe, a versão atual pode ser encontrada <a href="./diss.pdf" target="_blank">aqui</a>. Uma lista de versões abaixo:</h3>
+	
+	<p><span style="background-color: #FFFF00;"><b>NOTÍCIA 03/12/2013 - </b></span> estou passando esta pasta para um servidor de versão que estará aberto a todos! Isso deve ocorrer até dia 06/12/2013. A versão será mais atual que a disponível abaixo, portanto sugiro que aguarde alguns dias.</p>
+	
+	<ul>
+		<li><a href="weblab/ifsclatex/downloads/IFSC_latexclass_v1.0_pub_II_IFSC_2012.zip">Source IFSC_latexclass 1.0 &beta;</a> - publicado em ocasião da <a href="http://sifsc.ifsc.usp.br" target="_blank">II SIFSC</a></li>
+	</ul>
+	<br />
+	
+	<h3>Outros downloads:</h3>
+	
+	<ul>
+		<li><a href="http://sifsc.ifsc.usp.br/downloads/Mosqueiro_SIFSC_2012_LaTeX.pdf" target="_blank">PDF</a> e <a href="downloads/2012_SIFSC_LaTeX_Talk.zip">código</a> da minha apresentação na <a href="http://sifsc.ifsc.usp.br" target="_blank">II SIFSC</a>.</li>
+	</ul>
+	<br />
+	
+	<h3>Esta classe deverá ser colocada em breve em alguma GPL.</h3>
+	
+	
+	<a class="volta" href="#topo">Voltar ao topo</a>
+	
+	<h2><a name="bugs"><i>Bugs</i> conhecidos</a></h2>
+	
+	
+	<a class="volta" href="#topo">Voltar ao topo</a>
+	
+	<h2><a name="autores">Autor e contribuidores<a></h2>
+	
+	<h3>Esta classe foi criada baseada na última versão estável do ABNTex. Como o projeto foi descontinuado e eu precisava escrever minha dissertação de mestrado, resolvi fazer num formato que eu pudesse repassar para outras pessoas.</h3>
+
+	<h3>Meu nome é Thiago Mosqueiro, você pode me contactar pelo e-mail <i>thiago <b>dot</b> mosqueiro <b>at</b> usp <b>dot</b> br</i>.</h3>
+	
+	<h3></h3>
+	
+	<h3>Apesar de ter tido esse trabalho, não é minha prioridade ficar corrigindo os <i>bugs</i> e expandindo a classe para conseguir gerar algo à prova de erros. No entanto é de meu interesse manter razoavelmente funcional este modelo. Por isso, caso você tenha corrigido algum dos <i>bugs</i> ou tenha achado outros e queira dar uma contribuição, agradecerei muito e colocarei explicitamente este agradecimento aqui.</h3>
+	
+	
+	<a class="volta" href="#topo">Voltar ao topo</a>
+	
+</div>
