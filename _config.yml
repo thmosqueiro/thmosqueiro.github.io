@@ -4,4 +4,3 @@ description: "From electrons to ideas: random thoughts about anything computable
 root: /
 permalink: /:year-:month/:title/
 paginate: 3
-paginate_path: "/blog/page:num"
