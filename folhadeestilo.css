@@ -168,6 +168,11 @@ a img
     margin-top: 20px;
 }
 
+#contentc h1.nounderline
+{
+    border-bottom: 0px;
+}
+
 
 #contentc h2
 {
