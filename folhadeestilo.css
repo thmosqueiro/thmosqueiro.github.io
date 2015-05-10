@@ -1,42 +1,42 @@
 html 
 { 
-  background: url(/images/fundo1.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url(/images/fundo1.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 body
 {
-	background-color: none;
-	margin: 0px 0px 0px 0px;
-	color: #333;
-	font: 20px Cabin;
-	font-weight: 100;
-	text-align: justify;
+    background-color: none;
+    margin: 0px 0px 0px 0px;
+    color: #333;
+    font: 20px Cabin;
+    font-weight: 100;
+    text-align: justify;
 }
 
 p
 {
-	margin: 0px 0px;
+    margin: 0px 0px;
 }
 
 a, a:visited
 {
-	color: #CA4A0A;
-	text-decoration: none;
+    color: #CA4A0A;
+    text-decoration: none;
 }
 
 a:hover
 {
-	color: #2C0;
-	text-decoration: none;
+    color: #2C0;
+    text-decoration: none;
 }
 
 a img
 {
-	border: 0px;
+    border: 0px;
 }
 
 
@@ -45,37 +45,37 @@ a img
 
 #header
 {
-	z-index: 5;
-	position: fixed;
-	width: 100%;
-	top: 0;
-	left: 0;
-	margin: 0px 0px 0px 0px;
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0px 0px 0px 0px;
     height: 70px;
     background-color: #000;
-	opacity: 0.8;
+    opacity: 0.8;
 }
 
 #header #title
 {
-	width: 250px;
-	float: left;
-	padding: 15px 0 0 10px;
-	font: 25px 'Wellfleet';
-	color: #FFF;
+    width: 250px;
+    float: left;
+    padding: 15px 0 0 10px;
+    font: 25px 'Wellfleet';
+    color: #FFF;
 }
 
 #header #title a, #header #title a:visited
 {
-	font: 25px 'Wellfleet';
-	color: #FFF;
+    font: 25px 'Wellfleet';
+    color: #FFF;
 }
 
 
 #header #pageindex
 {
-	width: 500px;
-	float: center;
+    width: 500px;
+    float: center;
     margin: 0px auto;
 }
 
@@ -83,9 +83,9 @@ a img
 #header #pageindex ul
 {
     margin: 0px 0px 0px 0px;
-	padding: 15px 30px 0 0px;
+    padding: 15px 30px 0 0px;
     list-style: none;
-	font: 28px 'Wellfleet';
+    font: 28px 'Wellfleet';
 }
 
 #header #pageindex li 
@@ -93,25 +93,25 @@ a img
     display: inline;
     margin: 0px 0px 0px 0px;
     padding: 0px 0px 0px 30px;
-	font: 20px Verdana, sans-serif;
-	color: #FFF;
+    font: 20px Verdana, sans-serif;
+    color: #FFF;
 }
 
 #header #pageindex a, #header #pageindex a:visited
 {
-	color: #CFC;
-	text-decoration: none;
+    color: #CFC;
+    text-decoration: none;
 }
 
 #header #pageindex a.on, #header #pageindex a:hover.on
 {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 #header #pageindex a:hover
 {
-	color: #FB6;
-	text-decoration: none;
+    color: #FB6;
+    text-decoration: none;
 }
 
 
@@ -119,68 +119,110 @@ a img
 
 #content
 {
-	margin: 15px auto 0px auto;
-	width: 800px;
-	padding: 0px 0px 0px 100px;
+    margin: 15px auto 0px auto;
+    width: 800px;
+    padding: 0px 0px 0px 100px;
 }
 
 #contentc
 {
-	z-index: 1;
-	overflow: hidden;
-	box-shadow: 0px 0px 5px 3px;
-	border: 0px solid #111;
-	
-	border-radius: 6px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-khtml-border-radius: 6px;
-	
-	background-color: #FFF;
-	opacity: 0.92;
-	
-	margin: 90px auto 10px auto;
-	padding: 10px 30px 10px 30px;
-	width: 800px;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 3px;
+    border: 0px solid #111;
+    
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -khtml-border-radius: 6px;
+    
+    background-color: #FFF;
+    opacity: 0.92;
+    
+    margin: 90px auto 10px auto;
+    padding: 10px 30px 10px 30px;
+    width: 800px;
 }
 
 #contentc #column1
 {
-	width: 300px;
-	float: left;
-	text-align: center;
+    width: 300px;
+    float: left;
+    text-align: center;
 }
 
 #contentc #column2
 {
-        margin: 0px 0px 0px 20px;
-	width: 390px;
-	float: left;
-	text-align: center;
+    margin: 0px 0px 0px 20px;
+    width: 390px;
+    float: left;
+    text-align: center;
 }
 
 #contentc h1
 {
-	border-bottom: 2px solid #E80;
-	padding: 0px 30px; 
-	color: #E80;
-	font: 40px Arvo;
+    border-bottom: 2px solid #E80;
+    padding: 0px 30px; 
+    color: #E80;
+    font: 40px Arvo;
 }
 
 
 #contentc h2
 {
-	margin: 50px 0 0 0;
-	padding: 0px 10px; 
-	color: #3A2;
-	font: 25px Arvo;
+    margin: 50px 0 0 0;
+    padding: 0px 10px; 
+    color: #3A2;
+    font: 25px Arvo;
 }
 
 
 #contentc li
 {
-	margin: 0px 0px 10px 0px;
-	color: #333;
-        font-weight: 100;
-	font: 16px Arvo;
+    margin: 0px 0px 10px 0px;
+    color: #333;
+    font-weight: 100;
+    font: 16px Arvo;
+}
+
+
+
+
+/* Blog */
+
+#post h2
+{
+    margin: 50px 0 0 0;
+    padding: 0px 10px; 
+    color: #CA4A0A;
+    font: 27px Arvo;
+    padding: 0;
+}
+
+#post div.post-meta
+{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #CA4A0A;
+}
+
+#post div.post-meta span
+{
+    color: #777;
+    font: 12px Arvo;
+    margin: 0px 10px 0 0px;
+}
+
+#post div.post-entry, #post p.post-footer, #poster p
+{
+    color: #333;
+    font: 16px Arvo;
+    margin: 10px 0px 2px 0px;
+}
+
+#post p.post-footer
+{
+    color: #333;
+    font: 14px Arvo;
+    margin: 0px 0px 0px 0px;
 }
