@@ -1,34 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title}}{% endif %}</title> 
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
-    <link href="/folhadeestilo.css" rel="stylesheet" type="text/css" />
-    
-    <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Wellfleet' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>	
-    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
-    
-  </head>
+
+  {% include head.html %}
+
   <body>
     
-    <div id="header">
-      <div id="title">
-	<a href="/">Thiago Mosqueiro</a>
-      </div>
-      <div id="pageindex">
-	<ul>
-	  <li><a href="/index.html">Home</a></li>
-	  <li><a href="/research/">Research</a></li>
-	  <li><a href="/weblab/">WebLab</a></li>
-	  <li><a href="/contact.html">Contact</a></li>
-	</ul>
-      </div>
-    </div>
+    {% include tophor_index.html %}
     
     <div id="content">
       <div id="contentc">

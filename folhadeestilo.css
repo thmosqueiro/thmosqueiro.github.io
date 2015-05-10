@@ -74,7 +74,7 @@ a img
 
 #header #pageindex
 {
-    width: 500px;
+    width: 585px;
     float: center;
     margin: 0px auto;
 }
@@ -165,6 +165,7 @@ a img
     padding: 0px 30px; 
     color: #E80;
     font: 40px Arvo;
+    margin-top: 20px;
 }
 
 
@@ -188,9 +189,14 @@ a img
 
 
 
-/* Blog */
+/* Blog - post list*/
 
-#post h2
+#post-list
+{
+    margin: 0px 0px 30px 0px;
+}
+
+#post-list h2
 {
     margin: 50px 0 0 0;
     padding: 0px 10px; 
@@ -199,30 +205,83 @@ a img
     padding: 0;
 }
 
-#post div.post-meta
+#post-list div.post-meta
 {
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: #CA4A0A;
 }
 
-#post div.post-meta span
+#post-list div.post-meta span
 {
     color: #777;
     font: 12px Arvo;
     margin: 0px 10px 0 0px;
 }
 
-#post div.post-entry, #post p.post-footer, #poster p
+#post-list div.post-entry, #post-list p.post-footer, #post-lister p
 {
     color: #333;
     font: 16px Arvo;
     margin: 10px 0px 2px 0px;
 }
 
-#post p.post-footer
+#post-list p.post-footer
 {
     color: #333;
     font: 14px Arvo;
     margin: 0px 0px 0px 0px;
+}
+
+
+/* Blog - posts */
+
+#post
+{
+    margin: 0px 0px 30px 0px;
+    
+}
+
+#post h1
+{
+    border-bottom: 0px;
+    padding: 0px 0px; 
+    color: #E80;
+    font: 40px Arvo;
+    margin: 20px 0px 0px 0px;
+}
+
+
+#post div.post-meta
+{
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #CA4A0A;
+    
+    margin: 5px 0px 30px 0px;
+}
+
+#post div.post-meta span
+{
+    color: #777;
+    font: 14px Sans;
+    margin: 0px 10px 0 0px;
+}
+
+#post p
+{
+    color: #333;
+    font: 17px Cabin;
+    margin: 10px 0px 10px 0px;
+}
+
+#post img.post-img
+{
+    display: block;
+    margin: 12px auto 5px auto;
+    width: 400px;
+    
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
 }
