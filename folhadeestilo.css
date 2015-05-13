@@ -210,6 +210,14 @@ a img
     padding: 0;
 }
 
+#post-list h2 a, #post-list h2 a:visited
+{
+    color: #E80;
+    text-decoration: none;
+}
+
+
+
 #post-list div.post-meta
 {
     border-bottom-style: solid;
