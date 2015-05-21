@@ -203,7 +203,7 @@ a img
     width: 50px;
     
     /* I want it to stay close to #content */
-    top: 150px;
+    top: 165px;
     left: 50%;
     padding: 0px 0px 0px 530px; /* = (800 + 100 / 2) + epsilon */
 }
