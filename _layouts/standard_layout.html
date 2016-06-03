@@ -6,17 +6,24 @@
   <body>
     
     {% include tophor_index.html %}
-    
-    <div id="content">
-      <div id="contentc">
+
+
+    <div class="container">
+      
+      <div id="maincontent" class="col-xs-9 col-sm-11">
 	
 	{{ content }}
 	
       </div>
+      
+      {% include final_index.html %}
+
     </div>
-    
-    {% include final_index.html %}
-    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/offcanvas.js"></script>
   </body>
   
 </html>
