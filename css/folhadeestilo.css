@@ -212,6 +212,12 @@ a img
 }
 
 
+ul.publications li
+{
+    margin-bottom: 10px;
+    font: 19px;
+    list-style-image: url('/images/listicons.jpg');
+}
 
 
 
