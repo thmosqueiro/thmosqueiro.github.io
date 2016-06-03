@@ -131,8 +131,9 @@ a img
 #indexshift
 {
     background-color: #fff;
-    padding: 25px 30px 25px 30px;
+    padding: 0px 30px 20px 30px;
     margin: 0 0 0 50%;
+    margin-bottom: 30px; 
     width: 600px;
     border: 0px ;
     border-radius: 4px;
@@ -142,8 +143,9 @@ a img
 #contactshift
 {
     background-color: #fff;
-    padding: 25px 30px 25px 30px;
+    padding: 0px 30px 10px 30px;
     margin-left: 5%;
+    margin-bottom: 30px;
     width: 600px;
     border: 0px ;
     border-radius: 4px;
