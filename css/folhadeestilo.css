@@ -13,7 +13,7 @@ body
     background-color: none;
     margin: 0px 0px 0px 0px;
     color: #333;
-    font: 20px Cabin;
+    font: 22px Lato;
     font-weight: 100;
     text-align: justify;
 }
@@ -105,7 +105,7 @@ a img
 #maincontent
 {
     margin: 0px 0px 25px 0px;
-    padding: 5px 15px 25px 15px;
+    padding: 5px 30px 25px 30px;
     background-color: #fff;
     opacity: 0.92;
     border: 1px solid #222;
@@ -124,6 +124,14 @@ a img
     font: 40px Arvo;
     margin-top: 20px;
     margin-bottom: 30px;
+}
+
+#maincontent h2
+{
+    margin: 50px 0 30px 0;
+    padding: 0px 10px; 
+    color: #3A2;
+    font: 28px Arvo;
 }
 
 
