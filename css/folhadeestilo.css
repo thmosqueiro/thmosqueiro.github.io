@@ -9,7 +9,7 @@ html
 
 body
 {
-    padding-top: 70px;
+    padding-top: 85px;
     background-color: none;
     margin: 0px 0px 0px 0px;
     color: #333;
@@ -46,8 +46,24 @@ a img
 
 .container
 {
-    padding: 0 0px 0 180px;
+    padding: 0 0px 0 110px;
 }
+
+
+/* horizontal menu */
+.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav li, .navbar-inverse li, .navbar-nav a, .navbar-inverse a
+{
+    font: 20px 'Arvo';
+    color: #CFC;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand > li > a, .navbar-inverse .navbar-brand li, .navbar-brand a
+{
+    font: 25px 'Wellfleet';
+    color: #FFF;
+    padding: 10px;
+}
+
 
 
 /* side menu */
@@ -88,12 +104,28 @@ a img
 
 #maincontent
 {
-    margin: 0px 0px 0px 0px;
-    padding: 5px 15px 5px 15px;
+    margin: 0px 0px 25px 0px;
+    padding: 5px 15px 25px 15px;
     background-color: #fff;
     opacity: 0.92;
+    border: 1px solid #222;
     border-radius: 6px;
+    box-shadow: 0px 0px 5px 3px;
 }
+
+
+
+
+#maincontent h1
+{
+    border-bottom: 2px solid #E80;
+    padding: 0px 30px; 
+    color: #E80;
+    font: 40px Arvo;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 
 
 
