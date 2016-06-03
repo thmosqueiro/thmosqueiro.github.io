@@ -72,7 +72,7 @@ a img
 #sidebar
 {
     position: fixed;
-    right: 0;
+    right: -10px;
 }
 
 
@@ -91,7 +91,7 @@ a img
 
 #sidebar div.list-group a.list-group-item
 {
-    padding: 8px 10px 8px 20px;
+    padding: 8px 20px 8px 10px;
     margin: 0px 0 0px 0;
     background-color: none;
     border: 0px;
