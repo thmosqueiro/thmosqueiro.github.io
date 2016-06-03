@@ -154,6 +154,21 @@ a img
 }
 
 
+#content img.pic, #content img.centerpic
+{
+    border-radius: 6px;
+    border: 0px solid #222;
+    box-shadow: 5px 5px 10px 1px;
+    margin: 5px 5px 5px 5px;
+}
+#content img.centerpic
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 @media screen and (max-width: 1200px)
 {
     #indexshift
@@ -193,6 +208,12 @@ a img
 }
 
 
+
+#content p
+{
+    margin: 5px 2px 4px 2px;
+}
+
 #content h1, #indexshift h1, #contactshift h1
 {
     border-bottom: 2px solid #E80;
@@ -211,6 +232,15 @@ a img
     font: 28px Arvo;
 }
 
+#content .row h2
+{
+    margin: 5px;
+    display:block;
+    margin: 0 auto 0 auto;
+    text-align: center;
+}
+
+
 
 ul.publications li
 {
@@ -218,6 +248,8 @@ ul.publications li
     font: 19px;
     list-style-image: url('/images/listicons.jpg');
 }
+
+
 
 
 
