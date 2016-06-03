@@ -23,6 +23,13 @@ body
 #indexlayout
 {
     background: url(/images/fundo1.jpg) no-repeat center center fixed; 
+}
+#contactlayout
+{
+    background: url(/images/hike2014.jpg) no-repeat center center fixed;
+}
+#indexlayout, #indexlayout
+{
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -130,6 +137,18 @@ a img
     border: 0px ;
     border-radius: 4px;
     box-shadow: 0px 0px 0px 0px;
+    opacity: 0.88;
+}
+#contactshift
+{
+    background-color: #fff;
+    padding: 25px 30px 25px 30px;
+    margin-left: 5%;
+    width: 600px;
+    border: 0px ;
+    border-radius: 4px;
+    box-shadow: 0px 0px 0px 0px;
+    opacity: 0.85;
 }
 
 
@@ -172,7 +191,7 @@ a img
 }
 
 
-#content h1, #indexshift h1
+#content h1, #indexshift h1, #contactshift h1
 {
     border-bottom: 2px solid #E80;
     padding: 0px 30px; 
@@ -182,7 +201,7 @@ a img
     margin-bottom: 30px;
 }
 
-#content h2, #indexshift h2
+#content h2, #indexshift h2, #contactshift h2
 {
     margin: 50px 0 30px 0;
     padding: 0px 10px; 
