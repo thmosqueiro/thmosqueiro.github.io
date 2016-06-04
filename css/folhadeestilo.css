@@ -134,7 +134,7 @@ a img
     padding: 0px 30px 20px 30px;
     margin: 0 0 0 50%;
     margin-bottom: 30px; 
-    width: 600px;
+    width: 650px;
     border: 0px ;
     border-radius: 4px;
     box-shadow: 0px 0px 0px 0px;
@@ -146,7 +146,7 @@ a img
     padding: 0px 30px 10px 30px;
     margin-left: 5%;
     margin-bottom: 30px;
-    width: 600px;
+    max-width: 600px;
     border: 0px ;
     border-radius: 4px;
     box-shadow: 0px 0px 0px 0px;
@@ -169,42 +169,25 @@ a img
 }
 
 
+@media screen and (max-width: 1300px)
+{
+    #indexshift { margin: 0 0 0 45%; }
+
+}
 @media screen and (max-width: 1200px)
 {
-    #indexshift
-    {
-	margin: 0 0 0 45%;
-    }
+    #indexshift { margin: 0 0 0 40%; }
 
 }
-
-
 @media screen and (max-width: 1100px)
 {
-    #indexshift
-    {
-	margin: 0 0 0 40%;
-    }
+    #indexshift { margin: 0 0 0 30%; }
 
 }
-
-@media screen and (max-width: 1000px)
-{
-    #indexshift
-    {
-	margin: 0 0 0 30%;
-    }
-
-}
-
-
 @media screen and (max-width: 850px)
 {
-    #indexshift
-    {
-	width: 95%;
-	margin: 0 auto 0 auto;
-    }
+    #indexshift { width: 95%; margin: 0 auto 0 auto; }
+    #contactshift { margin: 0 auto 0 auto; with: 95%; }
 }
 
 
@@ -213,6 +196,7 @@ a img
 {
     margin: 5px 2px 4px 2px;
 }
+
 
 #content h1, #indexshift h1, #contactshift h1
 {
@@ -240,6 +224,28 @@ a img
     text-align: center;
 }
 
+
+a.btn-primary, a.btn-primary:hover
+{
+    color: #222;
+    background-color: #FB6;
+    font-weight: bold;
+    font-size: 18px;
+    border-color: #222;
+    border-width: 2px;
+}
+
+a.btn-primary:hover
+{
+    background-color:#E80;
+}
+
+
+.intro
+{
+    margin: 0;
+    padding: 0;
+}
 
 
 ul.publications li
