@@ -1,7 +1,7 @@
-html 
+html
 {
     background: #ddd;
-    /*background: url(/images/fundo1.jpg) no-repeat center center fixed; 
+    /*background: url(/images/fundo1.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -22,7 +22,7 @@ body
 
 #indexlayout
 {
-    background: url(/images/fundo1.jpg) no-repeat center center fixed; 
+    background: url(/images/fundo1.jpg) no-repeat center center fixed;
 }
 #contactlayout
 {
@@ -133,7 +133,7 @@ a img
     background-color: #fff;
     padding: 0px 30px 20px 30px;
     margin: 0 0 0 50%;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
     width: 650px;
     border: 0px ;
     border-radius: 4px;
@@ -168,21 +168,22 @@ a img
     margin-right: auto;
 }
 
-
+@media screen and (max-width: 1400px)
+{
+  body{ font: 18px Lato; }
+}
 @media screen and (max-width: 1300px)
 {
     #indexshift { margin: 0 0 0 45%; }
-
 }
 @media screen and (max-width: 1200px)
 {
     #indexshift { margin: 0 0 0 40%; }
-
 }
 @media screen and (max-width: 1100px)
 {
     #indexshift { margin: 0 0 0 30%; }
-
+    body{ font: 15px Lato; }
 }
 @media screen and (max-width: 850px)
 {
@@ -201,7 +202,7 @@ a img
 #content h1, #indexshift h1, #contactshift h1
 {
     border-bottom: 2px solid #E80;
-    padding: 0px 30px; 
+    padding: 0px 30px;
     color: #E80;
     font: 40px Arvo;
     margin-top: 20px;
@@ -211,7 +212,7 @@ a img
 #content h2, #indexshift h2, #contactshift h2
 {
     margin: 50px 0 30px 0;
-    padding: 0px 10px; 
+    padding: 0px 10px;
     color: #3A2;
     font: 28px Arvo;
 }
@@ -249,7 +250,7 @@ a.btn-primary:hover
 
 ul.publications li
 {
-    margin-bottom: 25px;
+    margin-bottom: 18px;
     font: 19px;
     list-style-image: url('/images/listicons.jpg');
 }
