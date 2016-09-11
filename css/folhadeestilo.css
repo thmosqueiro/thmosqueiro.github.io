@@ -19,6 +19,20 @@ body
     text-align: justify;
 }
 
+hr.fancy-line
+{
+    clear: both;
+    float: none;
+    width: 90%;
+    height: 1px;
+    margin: 20px 0 20px;
+    border: none;
+    background: #ddd;
+    background-image: -webkit-gradient( linear, left bottom, right bottom, color-stop(0, rgb(255,255,255)), color-stop(0.2, rgb(221,221,221)), color-stop(0.8, rgb(221,221,221)), color-stop(1, rgb(255,255,255)) );
+    background-image: -moz-linear-gradient( left center, rgb(255,255,255) 0%, rgb(221,221,221) 20%, rgb(221,221,221) 80%, rgb(255,255,255) 100% );
+}
+
+
 
 #indexlayout
 {
@@ -78,6 +92,13 @@ a img
     color: #FFF;
     padding: 10px;
 }
+
+.dropdown-menu > li > a:hover
+{
+    color: #E80;
+    background-color: #CFC;
+}
+
 
 
 
