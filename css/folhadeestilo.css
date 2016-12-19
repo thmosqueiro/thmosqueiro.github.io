@@ -277,8 +277,15 @@ ul.publications li
 }
 
 
+ul.socialmedia {
+    list-style-type: none;
+}
 
+ul.socialmedia li {
+    margin: 20px 0 20px;
+}
 
+ul.socialmedia a { color: #222; }
 
 @media screen and (max-width: 767px) {
   .row-offcanvas {
