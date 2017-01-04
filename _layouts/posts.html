@@ -5,29 +5,32 @@ layout: standard_layout
 <div id="post">
 
   <h1>{{ page.title }}</h1>
-  
-    <div class="post-meta">
-    <span>
-      Published:
-      <a href="{{ post.url }}">{{ page.date | date:"%Y-%m-%d" }}</a>
-    </span>
-    <span><i class="fa fa-ellipsis-v"></i></span>
-    <span>
-      Categories:
-      {% for cat in page.categories %}
-      <a href="/categories.html#{{ cat }}-ref">{{ cat }}</a>
-      {% endfor %}
-    </span>
-    <span><i class="fa fa-ellipsis-v"></i></span>
-    <span>
-      Tags:
-      {% for tag in page.tags %}
-      <a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>
-      {% endfor %}
-      <span>
-  </div>
 
-  
+    <div class="post-date">
+      <span id="date">
+        Published on {{ page.date | date: "%b %-d %Y" }}
+      </span>
+    </div>
+    <div class="post-meta">
+      <span>
+        Categories:
+        {% for cat in page.categories %}
+          <a href="/categories.html#{{ cat }}-ref">{{ cat }}</a>
+        {% endfor %}
+      </span>
+      <span>
+        Tags:
+        {% for tag in page.tags %}
+        <a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>
+        {% endfor %}
+      <span>
+    </div>
+
+
   {{ content }}
-  
+
+  {% if page.comments %}
+    {% include blog_comments.html %}
+  {% endif %}
+
 </div>

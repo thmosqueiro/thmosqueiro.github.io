@@ -3,6 +3,7 @@ layout: posts
 title: Hello world
 categories: tests
 tags: jekyll tests
+comments: true
 ---
 
 This is a hello world blog post. Hello! =)
