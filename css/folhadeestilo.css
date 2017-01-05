@@ -348,9 +348,24 @@ img.post-img
   box-shadow: 5px 5px 10px 1px;
 }
 
-#post p, #post ul, #post div.highlighter-rouge,
-#post-list p, .post-entry p, .post-entry ul, .post-entry div.highlighter-rouge
+img.snapshot
 {
+  display: block;
+  margin: 15px auto 5px auto;
+  width: 90%;
+  border-radius: 6px;
+  border: 0px solid #222;
+  box-shadow: 5px 5px 10px 1px;
+}
+
+#post h1, #post-list h2
+{
+    font-family: 'Montserrat', sans-serif;
+}
+
+#post p, #post ul, #post-list p, .post-entry p, .post-entry ul
+{
+    font-family: 'Raleway', sans-serif;
     margin: 10px 20% 10px 20px;
     font-size: 16pt;
 }
@@ -374,6 +389,26 @@ img.post-img
 #post h1 { margin-bottom: 15px; }
 #post-list h2 { margin-bottom: 5px; margin-left: 18px;}
 #post-list p {margin-left: 30px; font-size: 14pt;}
+
+#content #post h2
+{
+    margin: 50px 0 20px 18px;
+    padding: 0px 0px;
+    color: #A33;
+    font: 28px Arvo;
+}
+
+#post code
+{
+    font-family: monospace;
+    font-size: 14pt;
+    color: #444;
+}
+
+#post .highlighter-rouge pre.highlight
+{
+    margin: 15px 40px 2px 10px;
+}
 
 /* comments */
 
