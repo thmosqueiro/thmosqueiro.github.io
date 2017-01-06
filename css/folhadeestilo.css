@@ -392,23 +392,30 @@ img.snapshot
   box-shadow: 5px 5px 10px 1px;
 }
 
-#post h1, #post-list h2
+#content #post h1
 {
+    margin-bottom: 15px;
+    /*border-bottom: 0px solid;*/
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+}
+#content #post h2
+{
+    margin: 50px 0 20px 18px;
+    padding: 0px 0px;
+    color: #E80;
+    font-size: 22px;
     font-family: 'Montserrat', sans-serif;
 }
-
 #post p, #post ul, #post-list p, .post-entry p, .post-entry ul
 {
     font-family: 'Raleway', sans-serif;
     margin: 10px 20% 10px 20px;
-    font-size: 16pt;
+    font-size: 14pt;
 }
 
-.post-meta
-{
-    margin: 3px 20% 40px 20px;
-    font-size: 11pt;
-}
+.post-meta{ margin: 3px 20% 40px 20px; font-size: 11pt; }
+#post-list .post-meta { margin-bottom: 10px; padding-left: 10px; }
 .post-meta span { margin-right: 20px; }
 
 .post-date
@@ -417,20 +424,22 @@ img.snapshot
     font-size: 15pt;
 }
 
-#post-list .post-meta { margin: 3px 20% 30px 30px; }
-#post-list .post-date { margin: 0px 20% 3px 30px; font-size: 13pt; }
 
-#post h1 { margin-bottom: 15px; }
-#post-list h2 { margin-bottom: 5px; margin-left: 18px;}
+#post-list h2, #tag-list h2 { margin-bottom: 5px; margin-left: 18px; font-family: 'Montserrat', sans-serif; color: #333; }
+#post-list h2, #post-list h2 a { color: #333; }
 #post-list p {margin-left: 30px; font-size: 14pt;}
+#post-list hr.fancy-line { margin: 0px;  }
 
-#content #post h2
+#post-list .label a {color:#333;}
+#post-list span.label
 {
-    margin: 50px 0 20px 18px;
-    padding: 0px 0px;
-    color: #A33;
-    font: 28px Arvo;
+    padding: 8px 0px;
+    border-radius: 0px;
+    display: block;
+    width: 150px;
+    margin: 0 auto 0 auto;
 }
+#post-list p.label { text-align: right;}
 
 #post code
 {
@@ -446,12 +455,12 @@ img.snapshot
 
 @media screen and (max-width: 900px)
 {
-    
+
     img.post-img
     {
 	width: 80%;
     }
-    
+
     #post p, #post ul, #post-list p, .post-entry p,
     .post-entry ul
     {

@@ -2,7 +2,7 @@
 layout: posts
 title: Hello world
 categories: tests
-tags: jekyll tests
+tags: jekyll
 comments: true
 ---
 

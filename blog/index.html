@@ -9,33 +9,40 @@ layout: standard_layout
 
   {% for post in site.posts %}
 
-  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-  <div class="post-date">
+  <h2>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </h2>
+
+  <div class="post-meta">
     <span id="date">
       Published on {{ post.date | date: "%b %-d %Y" }}
     </span>
-  </div>
-  <div class="post-meta">
     <span>
       Categories:
       {% for cat in post.categories %}
-        <a href="/categories.html#{{ cat }}-ref">{{ cat }}</a>
+        <a href="/blog/categories/">{{ cat }}</a>
       {% endfor %}
     </span>
     <span>
       Tags:
       {% for tag in post.tags %}
-      <a href="/tags.html#{{ tag }}-ref">{{ tag }}</a>
+      <a href="/tags/">{{ tag }}</a>
       {% endfor %}
     <span>
   </div>
 
+  <hr class="fancy-line"></hr>
+
   <div class="post-entry">
     {{  post.content || split:'<!-- Split Here - Snapshot -->' | first }}
   </div>
-  <p class="post-footer">
-    <a href="{{ post.url }}">Read more...</a>
+
+  <p class="label">
+    <span class="label label-default" style="background-color: #ccc;">
+      <a href="{{ post.url }}">Read more... <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+    </span>
   </p>
+
 
 
   {% endfor %}
