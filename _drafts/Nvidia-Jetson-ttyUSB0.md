@@ -6,32 +6,42 @@ tags: arm signal
 comments: true
 ---
 
+<img src="/files/posts/nvidia-jetson/nvidia_jetson_cut.jpeg"
+alt="Picture of the Nvidia-Jetson" class='post-img-inset' />
 
 The <a
 href="http://www.nvidia.com/object/jetson-tk1-embedded-dev-kit.html">Nvidia
 Jetson </a> is a powerful  is a powerful board that uses the NVIDIA Tegra® K1
 SoC and the same NVIDIA Kepler™ computing core designed. Given the computation
-power and the relative low energy, it is a competitve option to developping
-embedded systems. We wanted to have one of these boards getting data from the
-electronic nose, which allows (i) fast re-allocation and (ii) good performance
-in online computation. The electronic nose uses a FTDI chip to stream the
-recordings through the USB serial port, which in linux is usually automatically
-mounted in /dev/ttyUSBX (X being 0 in the abscence of other serial ports).
+power and the relative low energy consumption, it is a competitve option to
+developping embedded systems. We wanted to have one of these boards getting data
+from the electronic nose (picture at the end of the post) for two main reasons:
+easy to change its location and exceptional performance for online computation.
+The electronic nose uses a [FTDI
+chip](http://www.ftdichip.com/Products/ICs/FT232H.htm) to stream the recordings
+through the USB serial port, which in linux is usually automatically mounted in
+/dev/ttyUSBX (X being 0 in the abscence of other serial ports). The problem was
+that the operating system did not have FTDI drivers by default, and we had to
+compile them.
 
-<img src="/files/posts/nvidia_jetson.jpeg"
-alt="Picture of the Nvidia-Jetson" class='post-img' style="width: 60%;" />
+By the way, thanks to [@jaquejbrito](http://github.com/jaquejbrito) for helping me
+throughout this test.
 
 <!-- Split Here - Snapshot -->
 
-I am using the Ubuntu version available from Linux For Tegra (R24.2.1)
-maintained by Nvidia. Once the FTDI chip is plugged in, it is visible:
+<img src="/files/posts/nvidia-jetson/nvidia_jetson.jpeg"
+alt="Picture of the Nvidia-Jetson" class='post-img' style="width:70%;" />
+
+We are using the Ubuntu version available from Linux For Tegra (R24.2.1)
+maintained by Nvidia. Once the FTDI chip is plugged in, it readily becomes
+visible:
 
 ```
 user@nose:~$ lsusb Bus 002 Device
 002: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
 ```
 
-But it will not mount as serial port:
+Still, the operating system did not mount it as serial port.
 
 ```
 user@nose:~$ dmesg | grep tty
@@ -43,8 +53,9 @@ user@nose:~$ dmesg | grep tty
 [    4.178319] serial-tegra.2: ttyTHS2 at MMIO 0x70006200 (irq = 78) is a SERIAL_TEGRA
 ```
 
-After checking for drivers, you will notice that drivers for the FTDI converter
-device are not set by default.
+You may try to force mount it, but it will not work. After checking for drivers,
+we realized that drivers for the FTDI converter device are not set by
+default.
 
 ```
 user@nose:~$ zcat /proc/config.gz | grep FTDI
@@ -56,50 +67,61 @@ Thus, to solve this we will need to compile it from the source.
 
 ## Compiling FTDI module
 
-Downloading the kernel source and uncompressing:
+Next I will walk through how we compiled the drivers from source. First,
+download the kernel source and uncompress it somewhere. In my case, this will be
+in my home directory.
+
 ```
 wget http://developer.download.nvidia.com/embedded/L4T/r21_Release_v4.0/source/kernel_src.tbz2
 bzip2 -d kernel_src.tbz2
 tar -xvf kernel_src.tar
 ```
-Make sure you get the right kernel for you. Mine was version 3.10.40... First time I got it wrong!
 
-Copying the current kernel config into the folder and running menuconfig:
+Make sure you get the right kernel for you. Mine was version 3.10.40. To double
+check it, use the ```uname``` command:
+
+```
+user@nose:~$:~/kernel# uname -a
+Linux tegra-ubuntu 3.10.40-gdacac96 #1 SMP PREEMPT Thu Jun 25 15:25:11 PDT 2015 armv7l armv7l armv7l GNU/Linux
+```
+
+The first time around, I got it wrong and I lost a good amount of time on it...!
+After uncompressing it, a new folder called "kernel" should have been created.
+Next, copy the current kernel config into the folder and run ```menuconfig```.
+
 ```
 zcat /proc/config.gz > ~/kernel/.config
 cd kernel
 make menuconfig
 ```
 
-Then navigate to:
+Then, navigate to:
 ```
 Device Drivers -> USB Support -> USB Serial Converter Support
 ```
 
-Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save it, but do not exit menyconfig yet! Now it is important to check if the ```CONFIG_LOCALVERSION``` variable is matching your kernel. If you don't check this, you may see a message like this:
+Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save it, but do not exit menyconfig yet. Now it is important to check if the ```CONFIG_LOCALVERSION``` variable is matching your kernel. If you don't check this, although doing everything properly, you may see a message like this at the end:
 
 ```
 [   36.225047] ftdi_sio: version magic '3.10.40 SMP preempt mod_unload ARMv7 p2v8 ' should be '3.10.40-gdacac96 SMP preempt mod_unload ARMv7 p2v8 '
 ```
 
-To check if your kernel has a ```CONFIG_LOCALVERSION``` set, use the uname command.
+To check if your kernel has a ```CONFIG_LOCALVERSION``` set, use the ```uname
+-a``` command. In the output shown above, the ```CONFIG_LOCALVERSION``` was set
+to ```-gdacac96```. Thus, we will append it to the kernel version DURING the
+compilation of our module, and in this way both kernel and driver will match
+versions perfectly.
 
-```
-user@nose:~$:/home/ubuntu/kernel# uname -a
-Linux tegra-ubuntu 3.10.40-gdacac96 #1 SMP PREEMPT Thu Jun 25 15:25:11 PDT 2015 armv7l armv7l armv7l GNU/Linux
-```
-
-In the case above, the ```CONFIG_LOCALVERSION``` was set to ```-gdacac96```. We
-will next append it to the kernel version DURING the compilation of our module.
 Fortunately, this can be done with menuconfig. Go to the original menu, and
 select ```General Setup->Local Version```. A window will open where you can set
-up the local version, which will be translated into the variable
-```CONFIG_LOCALVERSION```. Just type in the local conversion, which is what
-comes after the dase (with dash included!). So, in the case above, I typed
+up the local version, which will be translated into the variable ```CONFIG_LOCALVERSION```.
+Just type in the local conversion, which is what
+comes after the dase (with dash included!). In my case above, I typed
 "-gdacac96".
 
 <br>
-Save again and exit the menuconfig. Finally, we build the modules (read the make!):
+Save again and exit the menuconfig. Finally, build the modules (read the
+make file).
 
 ```
 make prepare
@@ -112,7 +134,7 @@ sudo depmod -a
 ```
 
 No errors mean everything went smoothly, and you should have the drivers
-available already.
+available just fine.
 
 
 ## Conclusion and testing the final setup
@@ -137,8 +159,8 @@ the operating system boots, otherwise your user may not have proper permissions
 (even after adding it to dialout group). This has to be related to when the
 device is mounted, although I have not figured out exactly why.
 
-<img src="/files/posts/enose.png"
-alt="Picture of the Nvidia-Jetson" class='post-img' style="width:90%;" />
+<img src="/files/posts/nvidia-jetson/enose.png"
+alt="Picture of the electronic nose" class='post-img' style="width:90%;" />
 
 After all this, the serial port works perfectly, and its performance is more
 than reasonable even when using simple parallel processing ([click here for the

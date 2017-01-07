@@ -372,6 +372,14 @@ ul.socialmedia a { color: #222; }
 
 /* blog */
 
+#post-list img.post-img-inset
+{
+  display: block;
+  margin: 15px 0px 20px 0px;
+  width: 100%;
+}
+#post img.post-img-inset { display: none;  }
+
 img.post-img
 {
   display: block;
