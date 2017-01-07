@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: Serial port in Nvidia Jetson board on ubuntu
+title: Serial port in Nvidia Jetson board on Ubuntu
 categories: Signal
 tags: arm signal
 comments: true
@@ -24,13 +24,13 @@ through the USB serial port, which in linux is usually automatically mounted in
 that the operating system did not have FTDI drivers by default, and we had to
 compile them.
 
-By the way, thanks to [@jaquejbrito](http://github.com/jaquejbrito) for helping me
-throughout this test.
-
 <!-- Split Here - Snapshot -->
 
 <img src="/files/posts/nvidia-jetson/nvidia_jetson.jpeg"
 alt="Picture of the Nvidia-Jetson" class='post-img' style="width:70%;" />
+
+By the way, thanks to [@jaquejbrito](http://github.com/jaquejbrito) for helping me
+throughout this test.
 
 We are using the Ubuntu version available from Linux For Tegra (R24.2.1)
 maintained by Nvidia. Once the FTDI chip is plugged in, it readily becomes
