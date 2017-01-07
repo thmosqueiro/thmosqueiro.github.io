@@ -4,8 +4,6 @@ layout: standard_layout
 
 {% include mathjax.rb %}
 
-<h1 class="nounderline">My texts, thoughts, and beyond</h1>
-
 
 <div id="post-list">
 
@@ -40,12 +38,10 @@ layout: standard_layout
   </div>
 
   <p class="label">
-    <span class="label label-default" style="background-color: #ccc;">
-      <a href="{{ post.url }}">Read more... <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+    <span class="label label-default">
+      <a href="{{ post.url }}">Read more...</a>
     </span>
   </p>
-
-
 
   {% endfor %}
 

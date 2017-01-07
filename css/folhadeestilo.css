@@ -400,13 +400,21 @@ p.img {width: 90%;}
 
 img.snapshot
 {
-  display: block;
-  margin: 15px auto 5px auto;
-  width: 90%;
-  border-radius: 6px;
-  border: 0px solid #222;
-  box-shadow: 5px 5px 10px 1px;
+    display: block;
+    margin: 15px auto 5px auto;
+    width: 90%;
+    border-radius: 6px;
+    border: 0px solid #222;
+    box-shadow: 5px 5px 10px 1px;
 }
+
+#content h1.blog
+{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
 
 #content #post h1
 {
@@ -431,7 +439,7 @@ img.snapshot
 }
 
 .post-meta{ margin: 3px 20% 40px 20px; font-size: 11pt; }
-#post-list .post-meta { margin-bottom: 10px; padding-left: 10px; }
+#post-list .post-meta { margin-bottom: 2px; padding-left: 10px; }
 .post-meta span { margin-right: 20px; }
 
 .post-date
@@ -441,9 +449,16 @@ img.snapshot
 }
 
 
-#post-list h2, #tag-list h2 { margin-bottom: 5px; margin-left: 18px; font-family: 'Montserrat', sans-serif; color: #333; }
+#post-list h2, #tag-list h2
+{
+    margin-bottom: 5px;
+    margin-left: 18px;
+    margin-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
 #post-list h2, #post-list h2 a { color: #333; }
-#post-list p {margin-left: 30px; font-size: 14pt;}
+#post-list p { margin-left: 30px; font-size: 13pt; }
 #post-list hr.fancy-line { margin: 0px;  }
 
 #post-list .label a {color:#333;}
@@ -451,9 +466,10 @@ img.snapshot
 {
     padding: 8px 0px;
     border-radius: 0px;
-    display: block;
+    display: inline-block;
     width: 150px;
-    margin: 0 30px;
+    margin: 0 0px;
+    background-color: #FFDDAA;
 }
 #post-list p.label { text-align: right;}
 
