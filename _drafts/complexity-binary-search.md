@@ -7,6 +7,9 @@ mathjax: true
 comments: true
 ---
 
+<img src="/files/posts/algorithms/binsearch_snap_100.gif"
+alt="..." class='post-img-inset' />
+
 I would like to share here an alternative way to find the complexity of [binary
 search algorithms](https://en.wikipedia.org/wiki/Binary_search_algorithm). By
 complexity I mean a measure of number of basic operations performed as function
@@ -17,6 +20,10 @@ presented, which does not requires the [Master
 Theorem](https://en.wikipedia.org/wiki/Master_theorem).
 
 <!-- Split Here - Snapshot -->
+
+<img src="/files/posts/algorithms/binsearch_snap_100.gif"
+alt="..." class='post-img' style="width:100%;" />
+
 
 A binary search is very easy to define, and is based on the fact that the list
 is ordered. Let’s say we are looking for an element e. First the list is divided
@@ -126,3 +133,21 @@ results without needing other results.
 
 
 ## How about wrapping this with a numerical test?
+
+This expression for $C(n)$ is indeed very simple, and a great exercise is to
+test it numerically. Below we have results of numerical simulations with
+randomly created lists of several different sizes, the average complexity for
+each size (dark green line) and the comparison with the calculated formula (red
+line).
+
+<img src="/files/posts/algorithms/BinSearchComplexity.png"
+alt="" class='post-img' style="width:90%;" />
+
+
+
+The visualization at the beggining of the post is a great way to better
+understand how binary search (and other algorithms) work. Using Python and
+Matplotlib, it is indeed very easy to create such animations. For this
+particular case, here is a small example:
+
+{%gist 63b9226fc94bdc3d9a5daf069017035a %}

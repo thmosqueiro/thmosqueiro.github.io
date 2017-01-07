@@ -487,8 +487,12 @@ img.snapshot
     background-color: #FED;
 }
 
+
+#post .gist { margin: 0 20% 0 20px; }
+
 @media screen and (max-width: 900px)
 {
+    #post .gist { margin: 0 15px 0 15px; }
 
     img.post-img
     {
@@ -507,6 +511,7 @@ img.snapshot
 	font-size: 10pt;
     }
 }
+
 
 
 /* comments */

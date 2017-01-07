@@ -3,3 +3,5 @@ url: http://thmosqueiro.vandroiy.com
 root: /
 permalink: /:year-:month/:title/
 paginate: 3
+gems:
+  - jekyll-gist
