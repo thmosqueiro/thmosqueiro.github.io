@@ -457,7 +457,7 @@ img.snapshot
     font-family: 'Montserrat', sans-serif;
     color: #E80;
 }
-#post-list h2, #post-list h2 a { color: #333; }
+#post-list h2, #post-list h2 a { color: #E80; }
 #post-list p { margin-left: 30px; font-size: 13pt; }
 #post-list hr.fancy-line { margin: 0px;  }
 
