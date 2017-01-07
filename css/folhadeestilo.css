@@ -455,7 +455,7 @@ img.snapshot
     margin-left: 18px;
     margin-top: 30px;
     font-family: 'Montserrat', sans-serif;
-    color: #333;
+    color: #E80;
 }
 #post-list h2, #post-list h2 a { color: #333; }
 #post-list p { margin-left: 30px; font-size: 13pt; }
@@ -469,7 +469,7 @@ img.snapshot
     display: inline-block;
     width: 150px;
     margin: 0 0px;
-    background-color: #FFDDAA;
+    background-color: #CCC;
 }
 #post-list p.label { text-align: right;}
 
