@@ -29,7 +29,7 @@ layout: standard_layout
     </div>
 
 
-  {{ content }}
+  {{ content || split:'<!-- Split Here - IMG-snapshot -->' | last }}
 
   {% if page.comments %}
     {% include blog_comments.html %}

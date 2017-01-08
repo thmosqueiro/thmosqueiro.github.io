@@ -6,6 +6,8 @@ tags: jekyll
 comments: true
 ---
 
+<!-- Split Here - IMG-snapshot -->
+
 This is a hello world blog post. Hello! =)
 
 <!-- Split Here - Snapshot -->

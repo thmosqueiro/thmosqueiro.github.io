@@ -375,10 +375,9 @@ ul.socialmedia a { color: #222; }
 #post-list img.post-img-inset
 {
   display: block;
-  margin: 15px 0px 20px 0px;
+  margin: 15px 0px 0px 0px;
   width: 100%;
 }
-#post img.post-img-inset { display: none;  }
 
 img.post-img
 {
@@ -496,19 +495,19 @@ img.snapshot
 
     img.post-img
     {
-	width: 80%;
+	       width: 80%;
     }
 
     #post p, #post ul, #post-list p, .post-entry p,
     .post-entry ul
     {
-	margin: 10px 15px 10px 15px;
-	font-size: 12pt;
+      	margin: 10px 15px 10px 15px;
+      	font-size: 12pt;
     }
 
     #post code
     {
-	font-size: 10pt;
+	       font-size: 10pt;
     }
 }
 

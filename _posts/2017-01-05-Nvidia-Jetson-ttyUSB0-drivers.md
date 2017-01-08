@@ -6,8 +6,9 @@ tags: arm signal
 comments: true
 ---
 
-<img src="/files/posts/nvidia-jetson/nvidia_jetson_cut.jpeg"
-alt="Picture of the Nvidia-Jetson" class='post-img-inset' />
+![Picture of the Nvidia-Jetson](/files/posts/nvidia-jetson/nvidia_jetson_cut.jpeg){: .post-img-inset}
+
+<!-- Split Here - IMG-snapshot -->
 
 The <a
 href="http://www.nvidia.com/object/jetson-tk1-embedded-dev-kit.html">Nvidia
@@ -26,8 +27,7 @@ compile them.
 
 <!-- Split Here - Snapshot -->
 
-<img src="/files/posts/nvidia-jetson/nvidia_jetson.jpeg"
-alt="Picture of the Nvidia-Jetson" class='post-img' style="width:70%;" />
+![Picture of the Nvidia-Jetson](/files/posts/nvidia-jetson/nvidia_jetson.jpeg){: .post-img}
 
 By the way, thanks to [@jaquejbrito](http://github.com/jaquejbrito) for helping me
 throughout this test.
