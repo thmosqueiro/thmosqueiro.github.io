@@ -268,6 +268,7 @@ a img
     font: 40px Arvo;
     margin-top: 20px;
     margin-bottom: 30px;
+    text-align: left;
 }
 
 #content h2, #indexshift h2, #contactshift h2
@@ -276,6 +277,7 @@ a img
     padding: 0px 10px;
     color: #3A2;
     font: 28px Arvo;
+    text-align: left;
 }
 
 #content .row h2
@@ -371,6 +373,11 @@ ul.socialmedia a { color: #222; }
 
 
 /* blog */
+
+#post, #post-list
+{
+    text-align: left;
+}
 
 #post-list img.post-img-inset
 {
