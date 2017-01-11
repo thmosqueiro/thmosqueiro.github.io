@@ -12,10 +12,10 @@ comments: true
 
 The <a
 href="http://www.nvidia.com/object/jetson-tk1-embedded-dev-kit.html">Nvidia
-Jetson </a> is a powerful  is a powerful board that uses the NVIDIA Tegra® K1
-SoC and the same NVIDIA Kepler™ computing core designed. Given the computation
+Jetson </a> is a powerful board that uses the NVIDIA Tegra® technology and 
+NVIDIA Kepler™ computing core. Given the computation
 power and the relative low energy consumption, it is a competitve option to
-developping embedded systems. We wanted to have one of these boards getting data
+developping embedded systems. We wanted to have one of these boards recording
 from the electronic nose (picture at the end of the post) for two main reasons:
 easy to change its location and exceptional performance for online computation.
 The electronic nose uses a [FTDI
@@ -29,11 +29,11 @@ compile them.
 
 ![Picture of the Nvidia-Jetson](/files/posts/nvidia-jetson/nvidia_jetson.jpeg){: .post-img}
 
-By the way, thanks to [@jaquejbrito](http://github.com/jaquejbrito) for helping me
+BTW thanks to [@jaquejbrito](http://github.com/jaquejbrito) for helping me
 throughout this test.
 
-We are using the Ubuntu version available from Linux For Tegra (R24.2.1)
-maintained by Nvidia. Once the FTDI chip is plugged in, it readily becomes
+We are using the Ubuntu version available from Linux For Tegra (R24.2.1), which 
+is maintained by Nvidia. Once the FTDI chip is plugged in, it readily becomes
 visible:
 
 ```
@@ -146,18 +146,19 @@ user@nose:~$ dmesg | grep tty
 ...
 [ 1066.441572] usb 2-1: FTDI USB Serial Device converter now attached to ttyUSB0
 ```
-
-If you have problems with permission for reading/writing to the serial port, try adding
-your user to the dialout group.
+As usual, only root has permission to read/write from/to ttyUSB0 by default, so
+remember to change it (e.g., to 660 or 666).
+If you still have problems with permission for reading/writing to the serial port, 
+try adding your user to the dialout group.
 
 ```
 usermod -a -G dialout user
 ```
 
 I also noticed that the electronic nose (picture below) has to be hooked up when
-the operating system boots, otherwise your user may not have proper permissions
-(even after adding it to dialout group). This has to be related to when the
-device is mounted, although I have not figured out exactly why.
+the operating system boots, otherwise your user may not have proper permissions 
+regardless (even after adding it to dialout group). This has to be related to 
+when the device is mounted, although I have not figured out exactly why.
 
 <img src="/files/posts/nvidia-jetson/enose.png"
 alt="Picture of the electronic nose" class='post-img' style="width:90%;" />
