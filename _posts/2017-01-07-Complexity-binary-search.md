@@ -16,7 +16,7 @@ I would like to share here an alternative way to find the complexity of the
 algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm). A Binary
 Search looks for an element in an ordered list, and is remarkable by both its
 simplicity in terms of implementation and its “worst-case” complexity. By
-complexity I mean the number of interations performed as function of the number
+complexity I mean the number of iterations performed as function of the number
 of elements in the list of elements. At least with respect to number of
 iterations, no search algorithm based on comparisons outperforms binary searches
 on average or in their worst-case scenario (see [The Art of Computer
@@ -29,68 +29,78 @@ books and classes, but is nothing completely new.
 <img src="/files/posts/algorithms/binsearch_snap_100.gif"
 alt="..." class='post-img' style="width:100%;" />
 
+Before we go on, let me thank **Brenno Barbosa** for his review and comments.
+
 A binary search is very easy to define, and is based on the fact that the list
-is ordered. Let’s say we are looking for an element $e$. First the list is divided
-into two. The element in the middle, say $m$, is then compared to $e$: if $m > e$, then
-$e$ might be in the first half of the list; if $m < e$, then e might be in the second
-half; if $m=e$, then the element being looked up was found. It is clear now that
-the main operation in this algorithms are the several comparisons that are
-performed during the search.
+is ordered. Let’s say we are looking for an element $e$. First the list is
+divided into two. The element in the middle, say $m$, is then compared to $e$:
+if $m > e$, then $e$ might be in the first half of the list; if $m < e$, then e
+might be in the second half; if $m=e$, then the element being looked up was
+found. It is clear now that the main operation in this algorithms are the
+several comparisons that are performed during the search.
 
-As a quick review of how binary search works, here is a minimal python module
-implementing a minimal version of the Binary Search. The visualization at the
-beggining of the post is common way to represent it. To create such animations,
-you can [use this small example of python
-script](https://gist.github.com/thmosqueiro/63b9226fc94bdc3d9a5daf069017035a#file-binsearch_animation-py)
-which only depends on numpy as matpltolib.
-
+As a quick review of how binary search works, find below a minimal python module
+implementing a Binary Search. The visualization at the beggining of the post is
+a common way to represent it. [This is the script I used to create this
+animation](https://gist.github.com/thmosqueiro/63b9226fc94bdc3d9a5daf069017035a#file-binsearch_animation-py).
 
 <script src="https://gist.github.com/thmosqueiro/63b9226fc94bdc3d9a5daf069017035a.js?file=BinarySearch.py"></script>
 
-The challenge then is to be able to calculate how the number of comparisons
-depends on the total length of the list, $n$. From the recursive nature of the
-algorithm, we can write the number of operations $C(n)$ as function of the
-number of operations needed for a list of length $n/2$,
+The challenge then is to be able to calculate how the number $C(n)$ of
+comparisons depends on the total length of the list, $n$, in the worst case.
+From the recursive nature of the algorithm, we can write the number of
+comparisons as function of the number of operations needed for a list of length
+$n/2$,
 
-$$ C(n) = C \left( \left\lfloor \frac{n}{2} \right\rfloor \right) + 1 \quad and \quad C(n),n \in \Z . $$
+$$ C(n) = C \left( \left\lfloor \frac{n}{2} \right\rfloor \right) + 1 \quad \mbox{and} \quad C(n),n \in \mathbb{Z} . $$
 
 The [floor function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions)
-$\lfloor \cdot \rfloor$ in $C(n)$ fixes cases where n is not even.
+$\lfloor \cdot \rfloor$ in $C(n)$ fixes cases where $n$ is not even. For an empty
+list, no comparisons are ever made, i.e. $C(0) = 0$. Also, if there is only one element in the
+list, then there is of course only one iteration. Therefore, $C(1)=1$. These are the
+boundary conditions for the recursion above.
+
+You can try with a few examples for yourself, with lists of two or three
+elements.
 
 
 ## Solving for powers of two
 
 This first particular case is very easy to find, and is often presented in
 Algorithms & Data Structures classes. Let's begin by assuming that $n$ is a
-power of $2$, i.e, $n=2^k$ with $k\in \Z$. This simplifies $C(n)$ into
+power of $2$, i.e, $n=2^k$ with $k\in \mathbb{Z}$. This simplifies $C(n)$ into
 
 $$
-C\left(2^k\right) = \left( \frac{2^k}{2} \right) + 1 = 2^{k-1} + 1 = 2^{k-2} + 2 = 2^{k-p} + p ,
+C\left(2^k\right) = C\left( \frac{2^k}{2} \right) + 1 = C\left( 2^{k-1} \right) + 1 = C\left( 2^{k-p} \right) + p ,
 $$
 
-for any $p<n$. For $p=k$,
+for any $p<n$. Although it may not be crystal clear yet, this is a [arithmetic
+progression](https://en.wikipedia.org/wiki/Arithmetic_progression) with a common
+difference of 1. To better visualize that, let $f(k) = C(2^k)$, then the above
+equation becomes $f(k) = k + 1$. Finally, substituting $p=k$ in the last
 
 $$
-C\left(2^k\right) = (1) + k = 1 + \log_2 \left( n \right) ,
+C\left(2^k\right) = C( 1 ) + k = 1 + k .
 $$
 
-where we have inverted $k$ as function of $n$. Thus,
+Inverting $k$ as function of $n$ and plugging in the equation above, we have
 
 $$
-C\left(n\right) = 1 + \log_2 \left( n \right)
+C\left(n\right) = 1 + \log_2 \left( n \right) .
 $$
 
-holds whenever $n$ is a power of two. Some textbooks even skip this proof, so I
-tried to make each step very clear. This assumes worst case scenario, because we
-went all the way to $C(1)$, which is equivalent to having a single last element
-to be checked - i.e., the deepest level in the search was reached. For numerical
+This holds whenever $n$ is a power of two. Some textbooks even skip this proof,
+so I tried to make each step very clear. This assumes worst case scenario,
+because we went all the way to $C(1)$, which is equivalent to having a single
+last element to be checked - i.e., the deepest level in the search was reached.
+In other words, this is an upper bound to the actual complexity. For numerical
 experiments, go to the end of this post.
 
 
 ## Solving the general case
 
 If $n$ is not exactly a power of $2$, it still can be written as $n = 2^k + q$
-with $k,q \in \Z$. Indeed, we can set
+with $k,q \in \mathbb{Z}$. Indeed, we can set
 
 $$
 0 < q < 2^{k+1} - 2^k = 2^k ,
@@ -111,10 +121,14 @@ $$
 q_p = \left\lfloor \frac{ q_{p-1} }{2} \right\rfloor .
 $$
 
-Conveniently,
+Because $\lfloor x + n \rfloor = \lfloor x \rfloor + n$ if $n$ is integer ([see
+identities
+here](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions#Equivalences))
+and because $2^k/2 = 2^{k-1}$ is integer, we can split the sum inside the floor
+function as follows:
 
 $$
-\left\lfloor \frac{2^{k} + q }{2} \right\rfloor = 2^{k-1} + \left\lfloor \frac{q}{2} \right\rfloor = 2^{k-1} + q_1
+\left\lfloor \frac{2^{k} + q }{2} \right\rfloor = 2^{k-1} + \left\lfloor \frac{q}{2} \right\rfloor = 2^{k-1} + q_1 \, .
 $$
 
 Thus, combining these last three pieces of information, we have
@@ -123,7 +137,7 @@ $$
 C(n) = C \left( 2^{k-p} + \left\lfloor \frac{q_p}{2} \right\rfloor \right) + p .
 $$
 
-Now, if $p=k$, we have
+In particular, when $p=k$,
 
 $$
 q < 2^k \quad \rightarrow \left\lfloor \frac{q_k}{2} \right\rfloor =
@@ -145,7 +159,7 @@ $$
 And that is it: This is the general result and extends the special case when $n$
 is a power of $2$. Interestingly, there only difference is that now we take the
 floor of $log_2 (n)$. This means that binary searches in any list with size $2^k <
-n \leq 2^{k}$ should have exactly the same worst-case performance. Although it
+n \leq 2^{k+1}$ should have exactly the same worst-case performance. Although it
 is very common to present only the first part of this demonstration in classes
 and books, assuming that $n=2^k$, it is indeed quite easy to generalize the
 result for any other integer. I particularly think this is an interesting
