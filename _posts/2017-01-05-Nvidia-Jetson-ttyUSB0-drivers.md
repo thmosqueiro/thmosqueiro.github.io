@@ -14,14 +14,14 @@ The <a
 href="http://www.nvidia.com/object/jetson-tk1-embedded-dev-kit.html">Nvidia
 Jetson </a> is a powerful board that uses the NVIDIA Tegra® technology and 
 NVIDIA Kepler™ computing core. Given the computation
-power and the relative low energy consumption, it is a competitve option to
-developping embedded systems. We wanted to have one of these boards recording
+power and the relatively low energy consumption, it is a competitive option for
+developing embedded systems. We wanted to have one of these boards recording
 from the electronic nose (picture at the end of the post) for two main reasons:
 easy to change its location and exceptional performance for online computation.
-The electronic nose uses a [FTDI
+The electronic nose uses an [FTDI
 chip](http://www.ftdichip.com/Products/ICs/FT232H.htm) to stream the recordings
 through the USB serial port, which in linux is usually automatically mounted in
-/dev/ttyUSBX (X being 0 in the abscence of other serial ports). The problem was
+/dev/ttyUSBX (X being 0 in the absence of other serial ports). The problem was
 that the operating system did not have FTDI drivers by default, and we had to
 compile them.
 
@@ -41,7 +41,7 @@ user@nose:~$ lsusb Bus 002 Device
 002: ID 0403:6001 Future Technology Devices International, Ltd FT232 Serial (UART) IC
 ```
 
-Still, the operating system did not mount it as serial port.
+Still, the operating system did not mount it as a serial port.
 
 ```
 user@nose:~$ dmesg | grep tty
@@ -67,7 +67,7 @@ Thus, to solve this we will need to compile it from the source.
 
 ## Compiling FTDI module
 
-Next I will walk through how we compiled the drivers from source. First,
+Next, I will walk through how we compiled the drivers from source. First,
 download the kernel source and uncompress it somewhere. In my case, this will be
 in my home directory.
 
@@ -100,7 +100,7 @@ Then, navigate to:
 Device Drivers -> USB Support -> USB Serial Converter Support
 ```
 
-Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save it, but do not exit menyconfig yet. Now it is important to check if the ```CONFIG_LOCALVERSION``` variable is matching your kernel. If you don't check this, although doing everything properly, you may see a message like this at the end:
+Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save it, but do not exit menuconfig yet. Now it is important to check if the ```CONFIG_LOCALVERSION``` variable is matching your kernel. If you don't check this, although doing everything properly, you may see a message like this at the end:
 
 ```
 [   36.225047] ftdi_sio: version magic '3.10.40 SMP preempt mod_unload ARMv7 p2v8 ' should be '3.10.40-gdacac96 SMP preempt mod_unload ARMv7 p2v8 '
@@ -109,8 +109,7 @@ Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save
 To check if your kernel has a ```CONFIG_LOCALVERSION``` set, use the ```uname
 -a``` command. In the output shown above, the ```CONFIG_LOCALVERSION``` was set
 to ```-gdacac96```. Thus, we will append it to the kernel version DURING the
-compilation of our module, and in this way both kernel and driver will match
-versions perfectly.
+compilation of our module, guaranteeing that the versions of the kernel and the driver match.
 
 Fortunately, this can be done with menuconfig. Go to the original menu, and
 select ```General Setup->Local Version```. A window will open where you can set
