@@ -20,7 +20,7 @@ from the electronic nose (picture at the end of the post) for two main reasons:
 easy to change its location and exceptional performance for online computation.
 The electronic nose uses an [FTDI
 chip](http://www.ftdichip.com/Products/ICs/FT232H.htm) to stream the recordings
-through the USB serial port, which in Linux is usually automatically mounted in
+through the USB serial port. Ideally, Linux would mount it in
 /dev/ttyUSBX (X being 0 in the absence of other serial ports). The problem was
 that the operating system did not have FTDI drivers by default, and we had to
 compile them.
@@ -85,7 +85,7 @@ user@nose:~$:~/kernel# uname -a
 Linux tegra-ubuntu 3.10.40-gdacac96 #1 SMP PREEMPT Thu Jun 25 15:25:11 PDT 2015 armv7l armv7l armv7l GNU/Linux
 ```
 
-The first time around, I got it wrong and I lost a good amount of time on it...!
+The first time around, I got it wrong, and I lost a good amount of time on it...!
 By uncompressing it, you will be creating a new folder called “kernel.”
 Next, copy the current kernel config into the folder and run ```menuconfig```.
 
@@ -145,7 +145,7 @@ user@nose:~$ dmesg | grep tty
 ...
 [ 1066.441572] usb 2-1: FTDI USB Serial Device converter now attached to ttyUSB0
 ```
-As usual, only root has permission to read/write from/to ttyUSB0 by default, so
+As usual, only the root has permission to read/write from/to ttyUSB0 by default, so
 remember to change it (e.g., to 660 or 666).
 If you still have problems with permission for reading/writing to the serial port, 
 try adding your user to the dialout group.
@@ -155,13 +155,13 @@ usermod -a -G dialout user
 ```
 
 I also noticed that the electronic nose (picture below) has to be hooked up when
-the operating system boots up. Otherwise your user may not have proper permissions 
+the operating system boots up. Otherwise, your user may not have proper permissions 
 (even after adding it to dialout group). This issue with permissions must be related to 
 when the device is mounted, although I have not figured out exactly why.
 
 <img src="/files/posts/nvidia-jetson/enose.png"
 alt="Picture of the electronic nose" class='post-img' style="width:90%;" />
 
-After all this, the serial port works perfectly, and its performance is more
-than reasonable even when using simple parallel processing ([click here for the
+At the end of the day, the serial port works perfectly. Its performance is 
+more than reasonable even when using simple parallel processing ([click here for the
 software](https://github.com/VandroiyLabs/FaroresWind)).
