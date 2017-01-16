@@ -20,7 +20,7 @@ from the electronic nose (picture at the end of the post) for two main reasons:
 easy to change its location and exceptional performance for online computation.
 The electronic nose uses an [FTDI
 chip](http://www.ftdichip.com/Products/ICs/FT232H.htm) to stream the recordings
-through the USB serial port, which in linux is usually automatically mounted in
+through the USB serial port, which in Linux is usually automatically mounted in
 /dev/ttyUSBX (X being 0 in the absence of other serial ports). The problem was
 that the operating system did not have FTDI drivers by default, and we had to
 compile them.
@@ -53,9 +53,9 @@ user@nose:~$ dmesg | grep tty
 [    4.178319] serial-tegra.2: ttyTHS2 at MMIO 0x70006200 (irq = 78) is a SERIAL_TEGRA
 ```
 
-You may try to force mount it, but it will not work. After checking for drivers,
-we realized that drivers for the FTDI converter device are not set by
-default.
+You may try to force mount it, but it will not work. After checking 
+for drivers, we realized that the operating system does not have the
+drivers for the FTDI converter device set by default.
 
 ```
 user@nose:~$ zcat /proc/config.gz | grep FTDI
@@ -63,7 +63,7 @@ user@nose:~$ zcat /proc/config.gz | grep FTDI
 # CONFIG_USB_FTDI_ELAN is not set
 ```
 
-Thus, to solve this we will need to compile it from the source.
+Thus, to solve this, we will need to compile it from the source.
 
 ## Compiling FTDI module
 
@@ -86,7 +86,7 @@ Linux tegra-ubuntu 3.10.40-gdacac96 #1 SMP PREEMPT Thu Jun 25 15:25:11 PDT 2015 
 ```
 
 The first time around, I got it wrong and I lost a good amount of time on it...!
-After uncompressing it, a new folder called "kernel" should have been created.
+By uncompressing it, you will be creating a new folder called “kernel.”
 Next, copy the current kernel config into the folder and run ```menuconfig```.
 
 ```
@@ -100,7 +100,7 @@ Then, navigate to:
 Device Drivers -> USB Support -> USB Serial Converter Support
 ```
 
-Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save it, but do not exit menuconfig yet. Now it is important to check if the ```CONFIG_LOCALVERSION``` variable is matching your kernel. If you don't check this, although doing everything properly, you may see a message like this at the end:
+Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save it, but do not exit menuconfig yet. Now it is important to check if the ```CONFIG_LOCALVERSION``` variable is matching your kernel. If you don't check this, you may see a message like this at the end:
 
 ```
 [   36.225047] ftdi_sio: version magic '3.10.40 SMP preempt mod_unload ARMv7 p2v8 ' should be '3.10.40-gdacac96 SMP preempt mod_unload ARMv7 p2v8 '
@@ -108,14 +108,14 @@ Mark "M" for Module in the option ```USB FTDI Single Port Serial Driver```. Save
 
 To check if your kernel has a ```CONFIG_LOCALVERSION``` set, use the ```uname
 -a``` command. In the output shown above, the ```CONFIG_LOCALVERSION``` was set
-to ```-gdacac96```. Thus, we will append it to the kernel version DURING the
+to ```-gdacac96```. Thus, we want to append it to the kernel version DURING the
 compilation of our module, guaranteeing that the versions of the kernel and the driver match.
 
-Fortunately, this can be done with menuconfig. Go to the original menu, and
+Fortunately, we can solve this with menuconfig. Go to the original menu, and
 select ```General Setup->Local Version```. A window will open where you can set
-up the local version, which will be translated into the variable ```CONFIG_LOCALVERSION```.
+up the local version, which sets the variable ```CONFIG_LOCALVERSION```.
 Just type in the local conversion, which is what
-comes after the dase (with dash included!). In my case above, I typed
+comes after the date (with dash included!). In my case above, I typed
 "-gdacac96".
 
 <br>
@@ -155,8 +155,8 @@ usermod -a -G dialout user
 ```
 
 I also noticed that the electronic nose (picture below) has to be hooked up when
-the operating system boots, otherwise your user may not have proper permissions 
-regardless (even after adding it to dialout group). This has to be related to 
+the operating system boots up. Otherwise your user may not have proper permissions 
+(even after adding it to dialout group). This issue with permissions must be related to 
 when the device is mounted, although I have not figured out exactly why.
 
 <img src="/files/posts/nvidia-jetson/enose.png"
