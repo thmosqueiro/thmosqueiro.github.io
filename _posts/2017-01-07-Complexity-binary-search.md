@@ -14,15 +14,15 @@ comments: true
 I would like to share here an alternative way to find the complexity of the
 [binary search
 algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm). A Binary
-Search looks for an element in an ordered list, and is remarkable by both its
-simplicity in terms of implementation and its “worst-case” complexity. By
-complexity I mean the number of iterations performed as function of the number
-of elements in the list of elements. At least with respect to number of
-iterations, no search algorithm based on comparisons outperforms binary searches
+Search looks for an element in an ordered list, and is remarkable for both its
+simplicity in terms of implementation and its “worst-case” complexity. By complexity I mean 
+the dependence of the number of iterations with the number of elements in the list.
+Concerning the number of comparisons, no search algorithm based on comparisons 
+outperforms binary searches
 on average or in their worst-case scenario (see [The Art of Computer
 Programming](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming), vol
 3). The method I share here is an extension of what is commonly presented in
-books and classes, but is nothing completely new.
+books and classes.
 
 <!-- Split Here - Snapshot -->
 
@@ -31,16 +31,16 @@ alt="..." class='post-img' style="width:100%;" />
 
 Before we go on, let me thank **Brenno Barbosa** for his review and comments.
 
-A binary search is very easy to define, and is based on the fact that the list
-is ordered. Let’s say we are looking for an element $e$. First the list is
+A binary search is very easy to define and is based on the fact that the list
+is ordered. Let’s say we are looking for an element $e$. First, the list is
 divided into two. The element in the middle, say $m$, is then compared to $e$:
 if $m > e$, then $e$ might be in the first half of the list; if $m < e$, then e
-might be in the second half; if $m=e$, then the element being looked up was
-found. It is clear now that the main operation in this algorithms are the
-several comparisons that are performed during the search.
+might be in the second half; if $m=e$, then we are done with our search. It 
+is evident now that the central operations in this algorithm are the 
+several comparisons performed during the search.
 
-As a quick review of how binary search works, find below a minimal python module
-implementing a Binary Search. The visualization at the beggining of the post is
+As a quick review of how binary search works, find below a minimal Python module
+implementing a Binary Search. The visualization at the beginning of the post is
 a common way to represent it. [This is the script I used to create this
 animation](https://gist.github.com/thmosqueiro/63b9226fc94bdc3d9a5daf069017035a#file-binsearch_animation-py).
 
@@ -56,7 +56,7 @@ $$ C(n) = C \left( \left\lfloor \frac{n}{2} \right\rfloor \right) + 1 \quad \mbo
 
 The [floor function](https://en.wikipedia.org/wiki/Floor_and_ceiling_functions)
 $\lfloor \cdot \rfloor$ in $C(n)$ fixes cases where $n$ is not even. For an empty
-list, no comparisons are ever made, i.e. $C(0) = 0$. Also, if there is only one element in the
+list, there are no comparisons, i.e. $C(0) = 0$. Also, if there is only one element in the
 list, then there is of course only one iteration. Therefore, $C(1)=1$. These are the
 boundary conditions for the recursion above.
 
@@ -66,15 +66,15 @@ elements.
 
 ## Solving for powers of two
 
-This first particular case is very easy to find, and is often presented in
+This first particular case is very easy to find and is often presented in
 Algorithms & Data Structures classes. Let's begin by assuming that $n$ is a
-power of $2$, i.e, $n=2^k$ with $k\in \mathbb{Z}$. This simplifies $C(n)$ into
+power of $2$, i.e., $n=2^k$ with $k\in \mathbb{Z}$. This assumption simplifies $C(n)$ into
 
 $$
 C\left(2^k\right) = C\left( \frac{2^k}{2} \right) + 1 = C\left( 2^{k-1} \right) + 1 = C\left( 2^{k-p} \right) + p ,
 $$
 
-for any $p<n$. Although it may not be crystal clear yet, this is a [arithmetic
+for any $p<n$. Although it may not be crystal clear yet, this is an [arithmetic
 progression](https://en.wikipedia.org/wiki/Arithmetic_progression) with a common
 difference of 1. To better visualize that, let $f(k) = C(2^k)$, then the above
 equation becomes $f(k) = k + 1$. Finally, substituting $p=k$ in the last
@@ -89,8 +89,8 @@ $$
 C\left(n\right) = 1 + \log_2 \left( n \right) .
 $$
 
-This holds whenever $n$ is a power of two. Some textbooks even skip this proof,
-so I tried to make each step very clear. This assumes worst case scenario,
+The last result holds whenever $n$ is a power of two. Some textbooks even skip this proof,
+so I tried to make each step very clear. Remember that we are assuming,
 because we went all the way to $C(1)$, which is equivalent to having a single
 last element to be checked - i.e., the deepest level in the search was reached.
 In other words, this is an upper bound to the actual complexity. For numerical
@@ -106,7 +106,7 @@ $$
 0 < q < 2^{k+1} - 2^k = 2^k ,
 $$
 
-or $0 < q < 2^k$. If this condition is not true, then $k$ should be $k+1$ and
+or $0 < q < 2^k$. If this condition is not true, then $k$ should be $k+1$, and
 $q$ can be re-evaluated in the interval $0 < q < 2^{k+1}$. This means that the
 factor $q$ is the smallest possible correction of $n$ from a power of $2$. Then,
 we can write the complexity as
@@ -157,9 +157,9 @@ C(n) = C \left( 1 \right) + k = C\left( 2^k \right) = 1 + \left\lfloor \log_2 \l
 $$
 
 And that is it: This is the general result and extends the special case when $n$
-is a power of $2$. Interestingly, there only difference is that now we take the
-floor of $log_2 (n)$. This means that binary searches in any list with size $2^k <
-n \leq 2^{k+1}$ should have exactly the same worst-case performance. Although it
+is a power of $2$. Interestingly, the only difference is that now we take the
+floor of $log_2 (n)$. In other words, the worst-case complexity of a binary
+search in any list with size $2^k < n \leq 2^{k+1}$ should be the same. Although it
 is very common to present only the first part of this demonstration in classes
 and books, assuming that $n=2^k$, it is indeed quite easy to generalize the
 result for any other integer. I particularly think this is an interesting
