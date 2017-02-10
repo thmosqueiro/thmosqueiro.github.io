@@ -17,7 +17,8 @@ part of a collaboration with the [Universdad Autonoma de Madrid](http://uam.es)
 enough to invite me for a talk during my stay, and UMH even recorded it (video
 below). We were really excited with this opportunity to learn more about one of
 the countries with most [UNESCO World Heritage
-Site](http://whc.unesco.org/en/statesparties/es).
+Site](http://whc.unesco.org/en/statesparties/es). I share in this blog post the
+video recorded from one of my talks and some of the cool pictures from our trip!
 
 <!-- Split Here - Snapshot -->
 
