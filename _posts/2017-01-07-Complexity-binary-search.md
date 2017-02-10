@@ -14,12 +14,12 @@ comments: true
 I would like to share here an alternative way to find the complexity of the
 [binary search
 algorithm](https://en.wikipedia.org/wiki/Binary_search_algorithm). A Binary
-Search looks for an element in an ordered list, and is remarkable for both its
-simplicity in terms of implementation and its “worst-case” complexity. By complexity I mean
-the dependence of the number of iterations with the number of elements in the list.
-Concerning the number of comparisons, no search algorithm based on comparisons
-outperforms binary searches
-on average or in their worst-case scenario (see [The Art of Computer
+Search is an algorithm to search for an element through an ordered list, and is
+remarkable for both its simplicity in terms of implementation and its
+“worst-case” complexity. By complexity I mean the dependence of the number of
+iterations with the number of elements in the list. Concerning the number of
+comparisons, no search algorithm based on comparisons outperforms binary
+searches on average or in their worst-case scenario (see [The Art of Computer
 Programming](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming), vol
 3). The method I share here is an extension of what is commonly presented in
 books and classes.
@@ -29,19 +29,19 @@ books and classes.
 <img src="/files/posts/algorithms/binsearch_snap_100.gif"
 alt="..." class='post-img' style="width:100%;" />
 
-Before we go on, let me thank **Brenno Barbosa** for his review and comments.
+Before we go on, let me thank [Brenno Barbosa]() for his review and comments.
 
-A binary search is very easy to define and is based on the fact that the list
-is ordered. Let’s say we are looking for an element $e$. First, the list is
-divided into two. The element in the middle, say $m$, is then compared to $e$:
-if $m > e$, then $e$ might be in the first half of the list; if $m < e$, then e
-might be in the second half; if $m=e$, then we are done with our search. It
-is evident now that the central operations in this algorithm are the
-several comparisons performed during the search.
+It is very easy to define the binary search algorithm, and it starts with the
+assumption that the list is ordered. Let’s say we are looking for an element
+$e$. First, the list is divided into two. The element in the middle, say $m$, is
+then compared to $e$: if $m > e$, then $e$ might be in the first half of the
+list; if $m < e$, then e might be in the second half; if $m=e$, then we are done
+with our search. It is evident now that the central operations in this algorithm
+are the several comparisons performed during the search.
 
-As a quick review of how binary search works, find below a minimal Python module
-implementing a Binary Search. The visualization at the beginning of the post is
-a common way to represent it. [This is the script I used to create this
+As a quick review, find below a minimal Python module implementing a Binary
+Search. The visualization at the beginning of the post is a common way to
+represent it. [This is the script I used to create this
 animation](https://gist.github.com/thmosqueiro/63b9226fc94bdc3d9a5daf069017035a#file-binsearch_animation-py).
 
 <script src="https://gist.github.com/thmosqueiro/63b9226fc94bdc3d9a5daf069017035a.js?file=BinarySearch.py"></script>
