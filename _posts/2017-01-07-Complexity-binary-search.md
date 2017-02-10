@@ -26,8 +26,8 @@ books and classes.
 
 <!-- Split Here - Snapshot -->
 
-<img src="/files/posts/algorithms/binsearch_100.gif"
-alt="..." class='post-img' style="width:70%;" />
+<img src="/files/posts/algorithms/binsearch_snap_100.gif"
+alt="..." class='post-img' style="width:100%;" />
 
 Before we go on, let me thank [Brenno Barbosa]() for his review and comments.
 
