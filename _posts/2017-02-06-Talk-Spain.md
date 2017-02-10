@@ -34,12 +34,13 @@ re-used with proper attribution.
 This trip happened when I was starting my second year as a Post Doc, working
 with an amazing and interdisciplinary team. At that time, I was lucky enough to
 be invited to a few conferences and events to talk about my recent work.
-Although from slightly different points of view, the main topic was on how large
-neural networks can, at the same time, employ fast decision making and stable
-representation of patterns. When I presented at the Centro de Investigacion
-Operativas, Universidade Miguel Hernandez (UMH), they recorded my talk and
-posted it to UMH's YouTube channel (video below). It was a little less than
-50min, as requested.
+Although from slightly different points of view, the main topic was the
+interplay between fast decision making and stable representation of patterns in
+large [neural networks composed of spiking
+neurons](https://en.wikipedia.org/wiki/Spiking_neural_network). When I presented
+at the Centro de Investigacion Operativas, Universidade Miguel Hernandez (UMH),
+they recorded my talk and posted it to UMH's YouTube channel (video below). It
+was a little less than 50min, as requested.
 
 <iframe class="YouTube" src="https://www.youtube.com/embed/wwSfLGsNH1w" frameborder="0" allowfullscreen></iframe>
 
@@ -47,8 +48,8 @@ posted it to UMH's YouTube channel (video below). It was a little less than
 
 It is certainly interesting to listen to yourself speaking in public. At that
 point, the fatigue of the trip was starting to get to me. Regardless, I need to
-look out for some words (e.g. "basically" and "like"). If you are interested in
-my slides, they are also available here.
+look out for some repetitive words (e.g. "basically" and "like"). If you are
+interested in my slides, they are also available here.
 
 <img src="/files/posts/2016-Spain/15128986_1364241820274936_7280181873053561647_o.jpeg"
 alt="..." class='post-img' style="width:80%;" />
@@ -72,15 +73,15 @@ With no doubt, Madrid is one of the cultural capitals of Europe. For starters,
 Prado Museum contains one of the finest collections of european art in the
 world. As recommended by many friends, we enjoyed the collection of works by
 [Francisco de Goya](https://en.wikipedia.org/wiki/Francisco_Goya). Especially
-for people like me, who like darker paintings and movies, Goya has unique style
-and technique. Still related to important artistic and historical landmarks, we
-visited the Plaza Mayor (first picture below). Another beautiful place to visit
-is the Buen Retiro Park, which dates back 500 years. One of its attractions is
-the Monument to Alfonso XII, opened in 1922. (second picture below). With
-respect to food, we were not so surprised to find many similarities between
-Spanish and Brazilian cuisines, which was particularly pleasant as Jaque and I
-have been in the US for a while now. Yes, I tried
-[paella](https://en.wikipedia.org/wiki/Paella) and loved it.
+for people like me, who like darker paintings and movies, it is easy to
+appreciate Goya's unique style and technique. Still related to important
+artistic and historical landmarks, we visited the Plaza Mayor (first picture
+below). Another beautiful place to visit is the Buen Retiro Park, which dates
+back 500 years. One of its attractions is the Monument to Alfonso XII, opened in
+1922. (second picture below). With respect to food, we were not so surprised to
+find many similarities between Spanish and Brazilian cuisines, which was
+particularly pleasant as Jaque and I have been in the US for a while now. Yes, I
+tried [paella](https://en.wikipedia.org/wiki/Paella) and loved it.
 
 Madrid in general has a pretty unique charm.
 
@@ -97,19 +98,21 @@ alt="..." class='post-img' style="width:100%;" />
 <br />
 
 During a Saturday, we decided to go to
-[Segovia](https://en.wikipedia.org/wiki/Segovia), a UNESCO World Heritage Sites
+[Segovia](https://en.wikipedia.org/wiki/Segovia), a UNESCO World Heritage Site
 with a rich historical content and wonderful architecture. It is not clear
-exactly how old the city is, but entries in the history books go back to 90 B.C.
-The work on Segovia's Cathedral dates back to 1500 -- i.e. it is as old as the
-new continent. But I was completely overwhelmed with Segovia's Alcazar (kind of
-castle, I guess). It rises on a rocky crag, right above the confluence of two
-rivers. The view from the top of the castle is just breathtaking (first
-picture below). At some point, royal families lived there, and you can see their
-throne, belt room, paintings, decorated ceiling, armory room, etc. By the way,
-this castle served as [one for the inspirations to the Cinderella Castle at the
-Magic Kingdom](https://en.wikipedia.org/wiki/Cinderella_Castle). You have to pay
-extra to go to the very top of the castle: it is damn worth it! But be prepared
-to sweat a bit.
+exactly how old the city is, but there are references in history books all the
+way back to 90 B.C. The work on [Segovia's
+Cathedral](https://en.wikipedia.org/wiki/Segovia_Cathedral) dates back to 1500 --
+i.e. it is as old as the new continent. But I was completely overwhelmed with
+[Segovia's Alcazar](https://en.wikipedia.org/wiki/Alc%C3%A1zar_of_Segovia) (kind
+of castle, I guess). It rises on a rocky crag, overlooking the confluence of two
+rivers. The panoramic view from the top of the castle is just breathtaking
+(first picture below). At some point, royal families lived there, and you can
+see their throne, belt room, paintings, decorated ceiling, armory room, etc. By
+the way, this castle served as [one for the inspirations to the Cinderella
+Castle at the Magic Kingdom](https://en.wikipedia.org/wiki/Cinderella_Castle).
+You have to pay extra to go to the very top of the castle: it is damn worth it!
+But be prepared to sweat a bit.
 
 <img src="/files/posts/2016-Spain/15235667_1366310486734736_7686233775831884797_o.jpeg"
 alt="..." class='post-img' style="width:100%;" />
@@ -134,17 +137,16 @@ alt="..." class='post-img' style="width:100%;" />
 <br />
 
 Our final destination was [Elche](https://en.wikipedia.org/wiki/Elche), in the
-Valencian Community, another UNESCO World Heritage Sites since 2001. Elche's
-landscape is also marked by beautiful palm trees (see pictures below!), most of
-them protected by the government. Based on the one night we spent in Elche, its
+Valencian Community, another UNESCO World Heritage Site since 2001. Elche's
+landscape is marked by beautiful palm trees (see pictures below!), most of them
+protected by the government. Based on the one night we spent in Elche, its
 nightlife is perfect for snacks (calamari!!) and good beers. According to my
 little research (i.e. google), Elche started as Helike, a settlement formed by
 Greeks around 600 B.C. Among the many archaeological remains found in Elche, the
 stone bust of the Lady of Elche - or Dama de Elche in Spanish - is a figure that
-you can spot seemingly anywhere in the city (see below a replica in black). The
-Lady of Elche may date from the Iberian period (4th century BC). Apparently, the
-original is now in Madrid, as part of the collection of the National
-Archaeological Museum of Spain.
+you can spot anywhere in the city. The first picture below shows a replica in
+black. Apparently, the original stone bust is now in Madrid, as part of the
+collection of the National Archaeological Museum of Spain.
 
 <img src="/files/posts/2016-Spain/IMG_20161128_100042.jpg"
 alt="..." class='post-img' style="width:100%;" />
