@@ -5,3 +5,4 @@ permalink: /:year-:month/:title/
 paginate: 3
 gems:
   - jekyll-gist
+  - jekyll-paginate

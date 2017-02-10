@@ -18,12 +18,6 @@ layout: standard_layout
       Published on {{ post.date | date: "%b %-d %Y" }}
     </span>
     <span>
-      Categories:
-      {% for cat in post.categories %}
-        <a href="/blog/categories/">{{ cat }}</a>
-      {% endfor %}
-    </span>
-    <span>
       Tags:
       {% for tag in post.tags %}
       <a href="/tags/">{{ tag }}</a>
@@ -37,10 +31,8 @@ layout: standard_layout
     {{  post.content || split:'<!-- Split Here - Snapshot -->' | first }}
   </div>
 
-  <p class="label">
-    <span class="label label-default">
-      <a href="{{ post.url }}">Read more...</a>
-    </span>
+  <p>
+    <a class="btn btn-default" href="{{ post.url }}" role="button">Continue reading... »</a>
   </p>
 
   {% endfor %}

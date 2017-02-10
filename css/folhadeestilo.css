@@ -519,6 +519,20 @@ img.snapshot
 }
 
 
+iframe.YouTube
+{
+    display: block;
+    margin: 30px 0px 30px 20px;
+
+    width: 800px;
+    height: 450px;
+    box-shadow: 10px 15px 5px #888888;
+}
+@media screen and (max-width: 1000px)
+{
+  iframe.YouTube { width: 560px; height: 315px; }
+}
+
 
 /* comments */
 
