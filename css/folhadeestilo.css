@@ -434,14 +434,18 @@ img.snapshot
     margin: 50px 0 20px 18px;
     padding: 0px 0px;
     color: #E80;
-    font-size: 22px;
+    font-size: 25px;
     font-family: 'Montserrat', sans-serif;
 }
 #post p, #post ul, #post-list p, .post-entry p, .post-entry ul
 {
-    font-family: 'Open Sans', sans-serif;
-    margin: 10px 20% 10px 20px;
+    font-family: 'Open Sans', Arial;
+    text-align: left;
+    font-weight: 100;
+    color: #333;
+    margin: 10px 20% 20px 20px;
     font-size: 14pt;
+    line-height: 29px;
 }
 
 .post-meta{ margin: 3px 20% 40px 20px; font-size: 11pt; }
@@ -491,6 +495,20 @@ img.snapshot
     border: 0px solid;
     border-radius: 0px;
     background-color: #FED;
+}
+
+#post blockquote
+{
+    padding: 10px 0px;
+    margin: 20px 20px 20px;
+    border-left: 5px solid #E80;
+}
+#post blockquote p
+{
+    font-size: 16pt;
+    color: #888;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
 }
 
 

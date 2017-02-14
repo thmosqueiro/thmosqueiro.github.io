@@ -3,7 +3,7 @@ layout: posts
 title: My recent trip to Spain
 categories: Personal
 tags: personal talk spain DNNs
-mathjax: true
+mathjax: false
 comments: true
 ---
 
@@ -77,8 +77,7 @@ for people like me, who like darker paintings and movies, it is easy to
 appreciate Goya's unique style and technique. Still related to important
 artistic and historical landmarks, we visited the Plaza Mayor (first picture
 below). Another beautiful place to visit is the Buen Retiro Park, which dates
-back 500 years. One of its attractions is the Monument to Alfonso XII, opened in
-1922. (second picture below). With respect to food, we were not so surprised to
+back 500 years. One of its attractions is the Monument to Alfonso XII, opened in 1922. (second picture below). With respect to food, we were not so surprised to
 find many similarities between Spanish and Brazilian cuisines, which was
 particularly pleasant as Jaque and I have been in the US for a while now. Yes, I
 tried [paella](https://en.wikipedia.org/wiki/Paella) and loved it.
