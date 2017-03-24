@@ -181,7 +181,7 @@ a img
 #content
 {
     background-color: #fff;
-    padding: 25px 30px 25px 30px;
+    padding: 25px 80px 25px 80px;
     border: 0px;
     border-radius: 3px;
     box-shadow: 10px 5px 30px 1px;
@@ -231,7 +231,7 @@ a img
 
 @media screen and (max-width: 1400px)
 {
-  body{ font: 18px Lato; }
+    body{ font: 18px Lato; }
 }
 @media screen and (max-width: 1300px)
 {
@@ -245,11 +245,14 @@ a img
 {
     #indexshift { margin: 0 0 0 30%; }
     body{ font: 15px Lato; }
+
+    #content { padding: 25px 50px 25px 50px;}
 }
 @media screen and (max-width: 850px)
 {
     #indexshift { width: 95%; margin: 0 auto 0 auto; }
     #contactshift { margin: 0 auto 0 auto; with: 95%; }
+    #content { padding: 20px 20px 20px 20px;}
 }
 
 
