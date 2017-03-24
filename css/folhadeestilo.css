@@ -568,7 +568,7 @@ iframe.YouTube
 {
     #indexshift { width: 95%; margin: 0 auto 0 auto; }
     #contactshift { margin: 0 auto 0 auto; with: 95%; }
-    #content { padding: 20px 15px 20px 15px;}
+    #content { padding: 20px 15px 20px 20px;}
 
     #content h2, #content #post h2, #indexshift h2, #contactshift h2,
     #content h1, #indexshift h1, #contactshift h1{
