@@ -22,8 +22,8 @@ look like in polar plots.
 
 <img src="/files/posts/algorithms/RosePlot_example.png" alt="..." class='post-img' style="width:90%;" />
 
-As shown in the figure above, error bars remain orthogonal to $0^{o}$ or
-$\pi^{o}$ direction, suggesting that Matplotlib is using the same code as that
+As shown in the figure above, error bars remain orthogonal to $0$ or
+$\pi$ radians direction, suggesting that Matplotlib is using the same code as that
 of euclidian coordinates. So, first thing is to define how to properly define
 the error bars in this context. In principle, error bars represent the interval
 within which a considerable part of the data being displayed (usually, standard
