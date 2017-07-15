@@ -406,10 +406,11 @@ img.snapshot
     /*border-bottom: 0px solid;*/
     font-family: 'Montserrat', sans-serif;
     font-size: 40px;
+    padding: 0px 0px;
 }
 #content #post h2
 {
-    margin: 50px 0 20px 18px;
+    margin: 50px 0px 20px 0px;
     padding: 0px 0px;
     color: #E80;
     font-size: 25px;
@@ -421,32 +422,32 @@ img.snapshot
     text-align: left;
     font-weight: 100;
     color: #333;
-    margin: 10px 20% 20px 20px;
-    font-size: 14pt;
-    line-height: 29px;
+    margin: 10px 10% 20px 0px;
+    font-size: 13pt;
+    line-height: 24px;
 }
 
-.post-meta{ margin: 3px 20% 40px 20px; font-size: 11pt; }
-#post-list .post-meta { margin-bottom: 2px; padding-left: 10px; }
+.post-meta{ margin: 3px 20% 40px 0px; font-size: 11pt; }
+#post-list .post-meta { margin-bottom: 2px; padding-left: 0px; }
 .post-meta span { margin-right: 20px; }
 
 .post-date
 {
-    margin: 0px 20% 3px 20px;
-    font-size: 15pt;
+    margin: 0px 10% 3px 0px;
+    font-size: 14pt;
 }
 
 
 #post-list h2, #tag-list h2
 {
     margin-bottom: 5px;
-    margin-left: 18px;
+    margin-left: 0px; padding-left: 0px;
     margin-top: 30px;
     font-family: 'Montserrat', sans-serif;
     color: #E80;
 }
 #post-list h2, #post-list h2 a { color: #E80; }
-#post-list p { margin-left: 30px; font-size: 13pt; }
+#post-list p { margin-left: 0px; font-size: 13pt; }
 #post-list hr.fancy-line { margin: 0px;  }
 
 #post-list .label a {color:#333;}
@@ -546,7 +547,7 @@ iframe.YouTube
 @media screen and (max-width: 900px)
 {
     #post .gist { margin: 0 15px 0 15px; }
-    
+
     img.post-img
     {
 	       width: 80%;
@@ -575,22 +576,20 @@ iframe.YouTube
 	margin: 20px 0px 10px 0px;
 	padding: 0px 0px;}
 
-    
+
     ul { padding-left: 20px; }
 
     #post p, #post p, #post ul, #post-list p, .post-entry p, .post-entry ul
-							      { 
-								  font-size: 11pt; 
-								  text-align: justify; 
-								  line-height: 18px; 
-								  margin: 15px 0 0 0; 
+							      {
+								  font-size: 11pt;
+								  text-align: justify;
+								  line-height: 18px;
+								  margin: 15px 0 0 0;
 							      }
-    
+
     .post-date{ margin: 0px 0 3px 0px; font-size: 11pt;}
     .post-meta{ margin: 3px 0 30px 0px; font-size: 11pt; }
     .post-meta span { margin-right: 0px; }
-    
-    
+
+
 }
-
-
