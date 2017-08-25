@@ -10,26 +10,28 @@ comments: true
 
 <!-- Split Here - IMG-snapshot -->
 
-I recently needed to construct a rose plot - or a bar plot in polar coordinates.
-Matplotlib creates beautiful plots in polar coordinates by simply using the
-statement *projection='polar'*. However, when I tried to add error bars, bars
-were completely tilted and with different angles depending on the inclination.
-To solve it, I wrote a small function to draw the lines appropriately -- at
-least according to my expectations and understanding of how error bars should
-look like in polar plots.
+Recently, I needed to construct a rose plot - or a bar plot in polar coordinates -
+with error bars. Python's Matplotlib creates beautiful plots in polar
+coordinates with the argument ```projection='polar'```. However, error bars are
+not rendered well in polar coordinates, tilted and distorted. To solve it, I
+wrote a small function to draw the error bars appropriately -- at least
+according to my expectations and understanding of how error bars should look
+like in a polar bar plot.
 
 <!-- Split Here - Snapshot -->
 
+Here is how error bars are rendered:
+
 <img src="/files/posts/algorithms/RosePlot_example.png" alt="..." class='post-img' style="width:90%;" />
 
-As shown in the figure above, error bars remain orthogonal to $0$ or
-$\pi$ radians direction, suggesting that Matplotlib is using the same code as that
-of euclidian coordinates. So, first thing is to define how to properly define
-the error bars in this context. In principle, error bars represent the interval
-within which a considerable part of the data being displayed (usually, standard
-deviation). There are two error bars that can be defined: radial and angular
-error. Radial error is useful for my practical case of use, but I will also
-touch the subject of an angular error for point plots.
+As shown in the figure above, error bars always remain horizontal (or orthogonal
+to the $0$ or $\pi$ radians directions), suggesting that Matplotlib is using the
+same code as that used in euclidian coordinates. There are two error bars that
+can be defined: radial and angular error. Because the error bars we are
+constructing refers to the radial variable, one thing to keep in mind is that
+this is a positive variable and thus is likely to be asymetric. Thus, the first
+thing we need to do is to define how to properly define the error bars in this
+context.
 
 
 ## Radial error
