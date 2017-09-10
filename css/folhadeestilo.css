@@ -16,7 +16,7 @@ body
     color: #333;
     font: 20px Lato;
     font-weight: 100;
-    text-align: justify;
+    text-align: left;
 }
 
 .container { width: 85%; }
@@ -423,18 +423,18 @@ img.snapshot
     font-weight: 100;
     color: #333;
     margin: 10px 10% 20px 0px;
-    font-size: 13pt;
+    font-size: 14pt;
     line-height: 24px;
 }
 
-.post-meta{ margin: 3px 20% 40px 0px; font-size: 11pt; }
+.post-meta{ margin: 3px 20% 40px 0px; font-size: 12pt; }
 #post-list .post-meta { margin-bottom: 2px; padding-left: 0px; }
 .post-meta span { margin-right: 20px; }
 
 .post-date
 {
     margin: 0px 10% 3px 0px;
-    font-size: 14pt;
+    font-size: 12pt;
 }
 
 
@@ -447,7 +447,7 @@ img.snapshot
     color: #E80;
 }
 #post-list h2, #post-list h2 a { color: #E80; }
-#post-list p { margin-left: 0px; font-size: 13pt; }
+#post-list p { margin-left: 0px; font-size: 14pt; }
 #post-list hr.fancy-line { margin: 0px;  }
 
 #post-list .label a {color:#333;}
@@ -465,7 +465,7 @@ img.snapshot
 #post code, #post-list code
 {
     font-family: monospace;
-    font-size: 11pt;
+    font-size: 14pt;
     color: #444;
 }
 #post .highlighter-rouge pre.highlight
@@ -484,7 +484,7 @@ img.snapshot
 }
 #post blockquote p
 {
-    font-size: 16pt;
+    font-size: 18pt;
     color: #888;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
@@ -540,7 +540,7 @@ iframe.YouTube
 @media screen and (max-width: 1100px)
 {
     #indexshift { margin: 0 0 0 30%; }
-    body{ font: 15px Lato; }
+    body{ font: 18px Lato; }
 
     #content { padding: 25px 50px 25px 50px;}
 }
@@ -557,12 +557,12 @@ iframe.YouTube
     .post-entry ul
     {
       	margin: 10px 15px 10px 15px;
-      	font-size: 12pt;
+      	font-size: 14pt;
     }
 
     #post code
     {
-	       font-size: 10pt;
+	       font-size: 16pt;
     }
 }
 @media screen and (max-width: 850px)
@@ -579,16 +579,16 @@ iframe.YouTube
 
     ul { padding-left: 20px; }
 
-    #post p, #post p, #post ul, #post-list p, .post-entry p, .post-entry ul
+    #post p, #post ul, #post-list p, .post-entry p, .post-entry ul
 							      {
-								  font-size: 11pt;
-								  text-align: justify;
-								  line-height: 18px;
+								  font-size: 14pt;
+								  text-align: left;
+								  line-height: 22px;
 								  margin: 15px 0 0 0;
 							      }
 
-    .post-date{ margin: 0px 0 3px 0px; font-size: 11pt;}
-    .post-meta{ margin: 3px 0 30px 0px; font-size: 11pt; }
+    .post-date{ margin: 0px 0 3px 0px; font-size: 12pt;}
+    .post-meta{ margin: 3px 0 30px 0px; font-size: 12pt; }
     .post-meta span { margin-right: 0px; }
 
 
