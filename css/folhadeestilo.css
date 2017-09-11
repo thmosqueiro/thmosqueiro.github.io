@@ -15,7 +15,6 @@ body
     margin: 0px 0px 0px 0px;
     color: #333;
     font: 20px Lato;
-    font-weight: 100;
     text-align: left;
 }
 
@@ -50,7 +49,7 @@ hr.fancy-line
 {
     background: url(/images/hike2014.jpg) no-repeat center center fixed;
 }
-#indexlayout, #indexlayout
+#indexlayout, #indexlayout, #contactlayout
 {
     -webkit-background-size: cover;
     -moz-background-size: cover;
