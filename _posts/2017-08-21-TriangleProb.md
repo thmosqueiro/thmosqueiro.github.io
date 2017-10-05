@@ -87,7 +87,7 @@ Because of the last inequality, if $B$ is also lower than $1/2$, then the third
 segment ($z$) is larger than the sum $A+B$. This is another restriction on the
 green area:
 
-<img src="/files/posts/triangle-problem/drawing3.png" alt="..." class='post-img' style="width:300px;" />
+<img src="/files/posts/triangle-problem/drawing2.png" alt="..." class='post-img' style="width:300px;" />
 
 The last condition is that the middle segment, defined between $A$ and $B$, is
 not larger than the other two itself. To ensure that, $B < A + \tfrac{1}{2}$.
