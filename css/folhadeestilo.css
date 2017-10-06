@@ -8,6 +8,8 @@ html
     background-size: cover;*/
 }
 
+.MathJax_Display { font-size: 13pt; }
+
 body
 {
     padding-top: 70px;
@@ -475,15 +477,18 @@ img.snapshot
     background-color: #FED;
 }
 
-#post blockquote
+#post-list blockquote, #post blockquote
 {
-    padding: 10px 0px;
+    width: 70%;
+    padding: 10px 15px;
     margin: 20px 20px 20px;
     border-left: 5px solid #E80;
+    background-color: #EAEAEA;
+    line-height: 30px;
+    font-size: 15pt;
 }
-#post blockquote p
+#post-list blockquote p, #post blockquote p
 {
-    font-size: 18pt;
     color: #888;
     font-family: 'Raleway', sans-serif;
     font-weight: 100;
@@ -553,7 +558,7 @@ iframe.YouTube
     }
 
     #post p, #post ul, #post-list p, .post-entry p,
-    .post-entry ul
+    .post-entry ul, #post-list blockquote, #post blockquote
     {
       	margin: 10px 15px 10px 15px;
       	font-size: 14pt;
@@ -578,13 +583,23 @@ iframe.YouTube
 
     ul { padding-left: 20px; }
 
+    #post-list blockquote, #post blockquote
+    { width: 95% }
+
+    .MathJax { font-size: 14pt; }
+
     #post p, #post ul, #post-list p, .post-entry p, .post-entry ul
-							      {
-								  font-size: 14pt;
-								  text-align: left;
-								  line-height: 22px;
-								  margin: 15px 0 0 0;
-							      }
+    #post-list blockquote, #post blockquote
+    {
+      font-size: 14pt;
+      line-height: 22px;
+    }
+
+    #post p, #post ul, #post-list p, .post-entry p, .post-entry ul
+		{
+				text-align: left;
+				margin: 15px 0 0 0;
+			}
 
     .post-date{ margin: 0px 0 3px 0px; font-size: 12pt;}
     .post-meta{ margin: 3px 0 30px 0px; font-size: 12pt; }

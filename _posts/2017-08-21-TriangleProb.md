@@ -6,6 +6,9 @@ mathjax: true
 comments: true
 ---
 
+
+![](/files/posts/triangle-problem/profile_dmesh_crop.png){: .post-img-inset}
+
 <!-- Split Here - IMG-snapshot -->
 
 This is apparently a classical problem, and the first challenge is to acknowledge that is is
@@ -17,10 +20,14 @@ not always possible to make a triangle out of 3 segments. Let's start from the b
  segments form a triangle?
  </blockquote>
 
+ Unexpectedly, the answer is not intuitive, and most of time people will
+ try and guess it. One of the reasons why I am writing this blog entry is because I think both
+ of these solutions are very different from [the canonical solution I
+ found over the web](https://mathoverflow.net/a/66797).
+
  <!-- Split Here - Snapshot -->
 
-Unexpectedly, the answer is not intuitive, and most of time people will
-try and guess it. Asking friends, I've got the answers 1, 1/2 and 0 (in order of
+ Asking friends, I've got the answers 1, 1/2 and 0 (in order of
 frequency). They are all wrong. I came across this problem during the
 [3rd QCBio Retreat](https://qcb.ucla.edu/events-seminars/retreat/) during the lunch.
 I immediatelly tried to solve it using probability, but got stuck in a passage.
@@ -29,12 +36,11 @@ In the afternoon I was able to close my calculations. Here are both solutions.
 
 Let me thank Brenno Barbosa for helping me cut a step in my formal solution.
 
-One of the reasons why I am writing this blog entry is because I think both
-of these solutions are very different from [the canonical solution I
-found over the web](https://mathoverflow.net/a/66797).
+And since we're talking about triangles...
+<img src="/files/posts/triangle-problem/profile_dmesh.png" alt="..." class='post-img' style="width:50%;" />
 
 
-## Why is it now always possible to build a triangle?
+## Why is it not always possible to form a triangle?
 
 The first thing I noticed when asking other people was that it may be surprising
 that you can not build a triangle regardless of where you break the sick. A
@@ -145,7 +151,7 @@ $$ \mathbb{P} \left( \bigtriangleup \right)  = \int_{\bigtriangleup} dF , $$
 where $dF$ is the joint probability density of $X$ and $Y$. There is an easy
 way to evaluate it: First, for $x < y$, we have
 
-$$ F\left( [ X \leq x , Y > y ] \right) = \mathbb{P} \left( [ A \leq x , B > y ] \cup [ B \leq x , A > y ] \right) . $$
+$$ F\big( [ X \leq x , Y > y ] \big) = \mathbb{P} \big( [ A \leq x , B > y ] \cup [ B \leq x , A > y ] \big) . $$
 
 $$  =
  \mathbb{P} \left( [ A \leq x , B > y ] \right) + \mathbb{P} \left( [ B \leq x , A > y ] \right)
@@ -172,7 +178,7 @@ Finally, going back to the original probability:
 
 $$ \mathbb{P} \left( \bigtriangleup \right) = \int_{\bigtriangleup} dF = \int_{\bigtriangleup} 2 dx dy $$
 
-$$ = 2 \int\limits_{0}^{\tfrac{1}{2}} \int\limits_{x}^{x+\tfrac{1}{2}} dx dy = 2 \left. \frac{x^2}{2} \right|_{0}^{\tfrac{1}{2}} = \frac{1}{4} , $$
+$$ = 2 \int\limits_{0}^{\tfrac{1}{2}} \int\limits_{\tfrac{1}{2}}^{x+\tfrac{1}{2}} dx dy = 2 \left. \frac{x^2}{2} \right|_{0}^{\tfrac{1}{2}} = \frac{1}{4} , $$
 
 by Fubini's theorem.
 
