@@ -48,9 +48,9 @@ simple enough counter example is when you break the pieces very, very close to
 one of the ends. Two segments are really short, and the third one is very long.
 In this case, you can't connect all three vertices.
 
-We can visualize this in the image below, that I borrowed from [Wikipedia](https://en.wikipedia.org/wiki/Triangle_inequality#/media/File:TriangleInequality.svg).
+Here is a why to visualize this constraint:
 
-<img src="/files/posts/triangle-problem/triangle.png" alt="..." class='post-img' style="width:300px;" />
+<img src="/files/posts/triangle-problem/triangle_inequality.png" alt="..." class='post-img' style="width:300px;" />
 
 This is a result of the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality).
 Following the same scheme shown in the figure above, if $x$, $y$ and $z$ are the
@@ -186,6 +186,23 @@ Thus, $ \mathbb{P} \left( \bigtriangleup \right) = 1 / 4 $ is our final answer.
 Note that, at the end of the day, the domain of integration of the integral we
 just solved is exactly the same as the region defined in the graphic solution
 above.
+
+
+## Quick Python script to numerically test the answer
+
+Why not estimate this probability using a simple simulation? We can do that
+with a few simple lines of code. Here is an example.
+
+<script src="https://gist.github.com/thmosqueiro/3b5ca8a4447c0220d426e1bc225b6671.js?file=Estimating_TriangleProb.py"></script>
+
+With 10000 samples, the result is:
+
+```
+$ python testing_triangle.py
+P(triangle) = 0.2505
+Relative error = 0.0020
+```
+
 
 
 ## Why bother with probability if there is a faster solution...?
