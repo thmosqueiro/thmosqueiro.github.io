@@ -11,28 +11,24 @@ comments: true
 
 <!-- Split Here - IMG-snapshot -->
 
-This is apparently a classical problem, and the first challenge is to acknowledge that is is
-not always possible to make a triangle out of 3 segments. Let's start from the beggining:
+Here is an interesting problem that involves probability. Can you guess the answer?
 
  <blockquote>
- Consider a stick of length 1. Select two points uniformly at random on the stick
- and break the stick at those points. What is the probability that the three
- segments form a triangle?
+   Consider a stick of length 1. Select two points uniformly at random on the stick
+   and break the stick at those points. What is the probability that the three
+   segments form a triangle?
  </blockquote>
 
- Unexpectedly, the answer is not intuitive, and most of time people will
- try and guess it. One of the reasons why I am writing this blog entry is because I think both
- of these solutions are very different from [the canonical solution I
- found over the web](https://mathoverflow.net/a/66797).
 
- <!-- Split Here - Snapshot -->
+<!-- Split Here - Snapshot -->
 
- Asking friends, I've got the answers 1, 1/2 and 0 (in order of
-frequency). They are all wrong. I came across this problem during the
-[3rd QCBio Retreat](https://qcb.ucla.edu/events-seminars/retreat/) during the lunch.
-I immediatelly tried to solve it using probability, but got stuck in a passage.
-However, another guy was able to come up with a quite interesting solution.
-In the afternoon I was able to close my calculations. Here are both solutions.
+<br />
+<span class="firstcharacter">W</span>here does this problem come from?
+After a short research, this problem appeared in one of the Senate-House Examinations (or later known as Mathematical Tripos) back in 1850 in Cambridge. From that point on, it became one of the many classical problems in continuous random variables. For instance, Poincaré included this problem in his Calcul des Probabilités (1986). Although not so recent, [this paper](https://link.springer.com/article/10.1007%2FBF02985378) brings a great review on the multiple solutions and the history behind this problem. What makes this problem interesting to me is not the actual value of the probability of forming a triangle, but how the to get there.
+
+The first challenge is to acknowledge that is is not always possible to make a triangle out of 3 segments. Asking friends, I've got the answers 1, 1/2 and 0 (in order of frequency). One of the reasons why I am writing this blog entry is because both of these solutions are very different from [the canonical solution I find over the web](https://mathoverflow.net/a/66797).
+
+I came across this problem during the [3rd QCBio Retreat](https://qcb.ucla.edu/events-seminars/retreat/), during the lunch break. I immediatelly started to give a shot solving it, but got stuck. While I was doing that, another guy in our table came up with a quite interesting solution. In the afternoon I was able to close my calculations.
 
 Let me thank Brenno Barbosa for helping me cut a step in my formal solution.
 
@@ -42,25 +38,19 @@ And since we're talking about triangles...
 
 ## Why is it not always possible to form a triangle?
 
-The first thing I noticed when asking other people was that it may be surprising
-that you can not build a triangle regardless of where you break the sick. A
-simple enough counter example is when you break the pieces very, very close to
-one of the ends. Two segments are really short, and the third one is very long.
-In this case, you can't connect all three vertices.
+The first challenge is to recognize that you can't always build a triangle with the three resulting segments regardless of where you break the sick.
 
-Here is a why to visualize this constraint:
+A simple counterexample is when you break the stick in two very close to one of the ends. As a result, two of the segments are too short, and the third one is very long. In this case, you can't connect all three vertices.
 
-<img src="/files/posts/triangle-problem/triangle_inequality.png" alt="..." class='post-img' style="width:300px;" />
-
-This is a result of the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality).
-Following the same scheme shown in the figure above, if $x$, $y$ and $z$ are the
-three sides of the triangle, then
+The actual constraint to form a triangle is the [triangle inequality](https://en.wikipedia.org/wiki/Triangle_inequality). Let $x$, $y$, and $z$ be length of each of the three vertices of the triangle. Then, the triangle inequality can be written as
 
 $$ x \leq y + z . $$
 
-To connect this with our present problem, assume that $ x + y + z = 1 $ and that
-the two randomly chosen points were $x$ and $x+y$. However, in this case we also
-must satisfy
+Here is a way to visualize this inequality:
+
+<img src="/files/posts/triangle-problem/triangle_inequality.png" alt="..." class='post-img' style="width:300px;" />
+
+To connect this with the problem at hand, assume that $ x + y + z = 1 $ and that the two randomly chosen points were $x$ and $x+y$. However, in this case, we also must satisfy
 
 $$ y \leq x + z $$
 
@@ -75,39 +65,46 @@ the resulting three segments.
 
 ## A clever and direct solution: graphically enumerating the solutions
 
-Let's assume points $A$ and $B$ are the two points selected.
-The three inequalities from the previous section define a region of the plane
-$A$ and $B$ in which solutions are admissible. If we can somehow calculate
-the area of that region and normalize it, that solves the problem.
+Let's assume points $A$ and $B$ are the two points selected. The three inequalities from the previous section define a region of the plane $A$ and $B$ in which solutions are admissible. If we can somehow calculate the area of that region and normalize it, that solves the problem.
 
-Here is how. Assume $A < B$, i.e., $A = x$ and $B = y + x$. From the first inequality,
-$A < 1/2$ must be satisfied. If $A$ is larger than half of the stick, then there
-is no point $B$ that will satisfy that inequality.
+Here is how. Assume $A < B$, i.e., $A = x$ and $B = y + x$. From the first inequality, $A < 1/2$ must be satisfied. If $A$ is larger than half of the stick, then no point $B$ satisfies the triangle inequality.
 
-Let's draw the $A \times B$ plane: on the x-axis, all possible values of $A$ and
-on the y-axis, all values of $B$. So, only the green shaded area is valid:
+Let's draw the $A \times B$ plane: on the x-axis, all possible values of $A$; and the y-axis, all values of $B$. So, only the green shaded area is valid:
 
 <img src="/files/posts/triangle-problem/drawing1.png" alt="..." class='post-img' style="width:300px;" />
 
-Because of the last inequality, if $B$ is also lower than $1/2$, then the third
-segment ($z$) is larger than the sum $A+B$. This is another restriction on the
-green area:
+Because of the last inequality, if $B$ is also lower than $1/2$, then the third segment ($z$) is larger than the sum of the first two segments. This fact restricts the region of admissible regions further (on the green area):
 
 <img src="/files/posts/triangle-problem/drawing2.png" alt="..." class='post-img' style="width:300px;" />
 
-The last condition is that the middle segment, defined between $A$ and $B$, is
-not larger than the other two itself. To ensure that, $B < A + \tfrac{1}{2}$.
-This last inequality defined a straight line in this plane:
+The last condition is that the middle segment, between points $A$ and $B$, is not larger than the other two. To ensure that, $B < A + \tfrac{1}{2}$. This last inequality defined a straight line in the $A \times B$ plane:
 
 <img src="/files/posts/triangle-problem/drawing3.png" alt="..." class='post-img' style="width:300px;" />
 
-The area is clearly $1/4$ of the the admissible area, and thus this is the
-probability of forming a triangle with the resulting broken segments.
+Thus, the area is $1/4$ of the the admissible area, which is the probability of forming a triangle with the resulting broken segments.
+
+I think this is a pretty creative and powerful solution, and to me . The only problem is when the problem gets harder, it becomes harder to come up with solutions like this one. So, next we will address this same problem but using elementary probability theory to come up with a purely anaytical solution.
+
+
+## Quick Python script to numerically test the answer
+
+Why not estimate this probability using a simple simulation? We can do that
+with a few simple lines of code. Here is an example.
+
+<script src="https://gist.github.com/thmosqueiro/3b5ca8a4447c0220d426e1bc225b6671.js?file=Estimating_TriangleProb.py"></script>
+
+With 10000 samples, the result is:
+
+```
+$ python testing_triangle.py
+P(triangle) = 0.2505
+Relative error = 0.0020
+```
 
 
 ## A formal solution using elementary probability
 
-The solution above is clever, and fast -- you can explain it in less than 5 minutes.
+Again, the graphical solution above is clever, and fast -- you can explain it in less than 5 minutes.
 However, this problem is a great exercise of elementary probability, and by
 solving it with a more formal approach we will be able to apply the same reasoning to
 solve other interesting problems (more on this below).
@@ -188,26 +185,13 @@ just solved is exactly the same as the region defined in the graphic solution
 above.
 
 
-## Quick Python script to numerically test the answer
-
-Why not estimate this probability using a simple simulation? We can do that
-with a few simple lines of code. Here is an example.
-
-<script src="https://gist.github.com/thmosqueiro/3b5ca8a4447c0220d426e1bc225b6671.js?file=Estimating_TriangleProb.py"></script>
-
-With 10000 samples, the result is:
-
-```
-$ python testing_triangle.py
-P(triangle) = 0.2505
-Relative error = 0.0020
-```
-
-
 
 ## Why bother with probability if there is a faster solution...?
 
 This is always a great question: why do we bother (and why should you) with a more
 formal solution to this problem, if the one above does the job?
+
+
+
 
 <!-- -->
