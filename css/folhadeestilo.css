@@ -387,6 +387,11 @@ img.post-img
   border: 0px solid #222;
   box-shadow: 5px 5px 10px 1px;*/
 }
+#page img.post-img
+{
+  display: block;
+  margin: 15px auto 20px 30px;
+}
 
 p.img {width: 90%;}
 #post img.pulll-right, #post-list img.pulll-right
