@@ -24,7 +24,7 @@ Here is an interesting problem that involves probability. Can you guess the answ
 
 <br />
 <span class="firstcharacter">W</span>here does this problem come from?
-After a short research, this problem appeared in one of the Senate-House Examinations (or later known as Mathematical Tripos) back in 1850 in Cambridge. From that point on, it became one of the many classical problems in continuous random variables. For instance, Poincaré included this problem in his Calcul des Probabilités (1986). Although not so recent, [this paper](https://link.springer.com/article/10.1007%2FBF02985378) brings a great review on the multiple solutions and the history behind this problem. What makes this problem interesting to me is not the actual value of the probability of forming a triangle, but how the to get there.
+After a short research, this problem appeared in one of the Senate-House Examinations (or later known as Mathematical Tripos) back in 1850 in Cambridge. From that point on, it became one of the many classical problems in continuous random variables. For instance, Poincaré included this problem in his Calcul des Probabilités (1986). Although not so recent, [this paper by Dr. Goodman](https://link.springer.com/article/10.1007%2FBF02985378) brings a great review on the multiple solutions and the history behind this problem. What makes this problem interesting to me is not the actual value of the probability of forming a triangle, but how the to get there.
 
 The first challenge is to acknowledge that is is not always possible to make a triangle out of 3 segments. Asking friends, I've got the answers 1, 1/2 and 0 (in order of frequency). One of the reasons why I am writing this blog entry is because both of these solutions are very different from [the canonical solution I find over the web](https://mathoverflow.net/a/66797).
 
@@ -190,6 +190,8 @@ above.
 
 This is always a great question: why do we bother (and why should you) with a more
 formal solution to this problem, if the one above does the job?
+
+Problems like the Broken Stick can be extended very easily. Dr. Hildebrand, for instance, has wrote [these interesting notes](https://faculty.math.illinois.edu/~hildebr/ugresearch/Hildebrand-Calculus-Spring2015-report.pdf) - probably for his calculus class - where he discusses this problem and proposes other possible related problems. In some cases, he studies the solution numerically. 
 
 
 
