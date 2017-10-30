@@ -414,7 +414,7 @@ img.snapshot
 }
 
 
-#content #post h1
+#content #post h1, #content #page h1
 {
     margin-bottom: 15px;
     /*border-bottom: 0px solid;*/
@@ -422,7 +422,9 @@ img.snapshot
     font-size: 40px;
     padding: 0px 0px;
 }
-#content #post h2
+#content #page h1 { padding-left:20px; font-size:45px; }
+
+#content #post h2, #content #page h2
 {
     margin: 50px 0px 20px 0px;
     padding: 0px 0px;
@@ -430,7 +432,10 @@ img.snapshot
     font-size: 25px;
     font-family: 'Montserrat', sans-serif;
 }
-#post p, #post ul, #post-list p, .post-entry p, .post-entry ul
+#content #page h2 { font-size: 30px; margin-top: 70px;}
+
+#post p, #post ul, #post-list p, .post-entry p, .post-entry ul,
+#page p, #page ul
 {
     font-family: 'Open Sans', Arial;
     text-align: left;
