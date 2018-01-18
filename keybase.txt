@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/thmosqueiro
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://thmosqueiro.vandroiy.com
+  * I am thmosqueiro (https://keybase.io/thmosqueiro) on keybase.
+  * I have a public key ASBkLAlSDFGMqYp3FCbOLsH9r6SPyhYSWwslaQl6fuIVGQo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101cbe7df826f5c36bf7041de02e62d7e7c49b1d0f7fa1a47b3f84b68bb65e893a00a",
+      "host": "keybase.io",
+      "kid": "0120642c09520c518ca98a771426ce2ec1fdafa48fca16125b0b2569097a7ee215190a",
+      "uid": "f73f093d953bef56af22e27bd8603819",
+      "username": "thmosqueiro"
+    },
+    "merkle_root": {
+      "ctime": 1516259663,
+      "hash": "23805bc834dc7cfe3841d84294f64fdae8c3f844a9d75f0f9c1856dbaf4aa794af3ab8405cb4500963366167b96bbad21786e3f6cb88c60b3408e0897f9de645",
+      "hash_meta": "19c162d6fe836be94a94f44f06c9df7a785f6c4eb22df7cfcacbd9cc182ddbc7",
+      "seqno": 1940287
+    },
+    "service": {
+      "hostname": "thmosqueiro.vandroiy.com",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.38"
+  },
+  "ctime": 1516259677,
+  "expire_in": 504576000,
+  "prev": "e142d8e89d95dbe5f3cc990e3a08194b55d39f719506f67183f95536ceba3b10",
+  "seqno": 9,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgZCwJUgxRjKmKdxQmzi7B/a+kj8oWElsLJWkJen7iFRkKp3BheWxvYWTFA1J7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxY2JlN2RmODI2ZjVjMzZiZjcwNDFkZTAyZTYyZDdlN2M0OWIxZDBmN2ZhMWE0N2IzZjg0YjY4YmI2NWU4OTNhMDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNjQyYzA5NTIwYzUxOGNhOThhNzcxNDI2Y2UyZWMxZmRhZmE0OGZjYTE2MTI1YjBiMjU2OTA5N2E3ZWUyMTUxOTBhIiwidWlkIjoiZjczZjA5M2Q5NTNiZWY1NmFmMjJlMjdiZDg2MDM4MTkiLCJ1c2VybmFtZSI6InRobW9zcXVlaXJvIn0sIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNTE2MjU5NjYzLCJoYXNoIjoiMjM4MDViYzgzNGRjN2NmZTM4NDFkODQyOTRmNjRmZGFlOGMzZjg0NGE5ZDc1ZjBmOWMxODU2ZGJhZjRhYTc5NGFmM2FiODQwNWNiNDUwMDk2MzM2NjE2N2I5NmJiYWQyMTc4NmUzZjZjYjg4YzYwYjM0MDhlMDg5N2Y5ZGU2NDUiLCJoYXNoX21ldGEiOiIxOWMxNjJkNmZlODM2YmU5NGE5NGY0NGYwNmM5ZGY3YTc4NWY2YzRlYjIyZGY3Y2ZjYWNiZDljYzE4MmRkYmM3Iiwic2Vxbm8iOjE5NDAyODd9LCJzZXJ2aWNlIjp7Imhvc3RuYW1lIjoidGhtb3NxdWVpcm8udmFuZHJvaXkuY29tIiwicHJvdG9jb2wiOiJodHRwOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4zOCJ9LCJjdGltZSI6MTUxNjI1OTY3NywiZXhwaXJlX2luIjo1MDQ1NzYwMDAsInByZXYiOiJlMTQyZDhlODlkOTVkYmU1ZjNjYzk5MGUzYTA4MTk0YjU1ZDM5ZjcxOTUwNmY2NzE4M2Y5NTUzNmNlYmEzYjEwIiwic2Vxbm8iOjksInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAT3phf3UsZr/JoWrDmvNTVTRiNbjJm2U5AYMA0vHEiSTcRWlT1rcFYGvNciVmf1+Y24v+HIQdEuFltjG6/JgwCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIPNHDXC8DphZ35XCoc8b7jB1ICXniTOtVvBzCOICFmnpo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/thmosqueiro
+
+==================================================================
