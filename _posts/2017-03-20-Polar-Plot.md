@@ -10,9 +10,7 @@ comments: true
 
 <!-- Split Here - IMG-snapshot -->
 
-Recently, I needed to construct a rose plot - or a bar plot in polar coordinates -
-with error bars. Python's Matplotlib creates beautiful plots in polar
-coordinates with the argument ```projection='polar'```. However, error bars are
+Python's Matplotlib creates beautiful plots in polar coordinates and all you need for that is to specify the argument ```projection='polar'```. Recently, I needed to create a visualization that demonstrated the accumulation of a protein at different places in the cells, so I used this method. However, error bars are
 not rendered well in polar coordinates, tilted and distorted. To solve it, I
 wrote a small function to draw the error bars appropriately -- at least
 according to my expectations and understanding of how error bars should look
